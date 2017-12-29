@@ -5,11 +5,11 @@ body {
 .content_header {
     text-align: center;
     font-size: 30px;
-    color: #D9534F;
+    color: #047AF7;
 }
 
 .content_center {
     width: 100%;
     height: 700px;
-    border: 1px solid red;
+    border: 1px solid #047AF7;
 }
