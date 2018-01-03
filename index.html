@@ -69,8 +69,8 @@
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li class="active"><a href="#guiji" data-toggle="tab">车辆列表<span class="label label-success">10</span></a> </li>
-                                    <li><a href="#gaojing" data-toggle="tab">车辆告警信息</a></li>
-                                    <li><a href="#paizhao" data-toggle="tab">车辆牌照保险管理</a></li>
+                                    <li><a href="#carTypeIn" data-toggle="tab">车辆录入</a></li>
+                                    <li><a href="#paizhao" data-toggle="tab">车辆保险</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -144,20 +144,159 @@
                                             <th data-field="cat" data-align="center" data-width="10%">类型</th>
                                             <th data-field="status" data-align="center" data-width="10%">状态</th>
                                             <th data-field="data" data-align="center" data-width="15%">登记日期</th>
-                                            <th data-field="operate" data-align="center" data-width="10%" data-events=operateEvents1 data-formatter=operateFormatter1>操作 </th>
-                                            <th data-field="operate" data-align="center" data-width="10%" data-events=operateEvents2 data-formatter=operateFormatter2>操作 </th>
+                                            <th data-field="operate" data-align="center" data-width="10%" data-events=operateEvents data-formatter=operateFormatter>操作 </th>
+                                            <!--<th data-field="operate" data-align="center" data-width="10%" data-events=operateEvents2 data-formatter=operateFormatter2>操作 </th>-->
                                         </tr>
                                     </thead>
                                 </table>
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane" id="gaojing">
-                        <p>用于被管理车辆的超速行驶管理，可形成告警信息列表。 告警信息内容：车号、驾驶员、超速地点、当时车速
-                        </p>
+                    <div class="tab-pane" id="carTypeIn">
+                        <!--车辆录入-->
+                        <h3>汽车录入表</h3>
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">车牌号</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="请输入车牌号">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">原车牌号</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="请输入原始车牌号">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">颜色</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="颜色">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">品牌</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="品牌">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">购买日期</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="购买日期">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">购买价格</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="购买价格">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">车辆类型</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="车辆类型">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">备注</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="其他信息">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <div class="checkbox">
+                                        <label>
+                                        <input type="checkbox">同意相关条例
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-default">提交</button>
+                                </div>
+                            </div>
+                        </form>
+
                     </div>
                     <div class="tab-pane" id="paizhao">
-                        <p>用于车辆临时牌照有效期限以及保险的有效期限管理，牌照和保险两者的有效日期一旦进入用户设定的最后时间节点，即可在系统后台自动提醒管理人员及时更换牌照和续保。</p>
+                        <!--<p>用于车辆临时牌照有效期限以及保险的有效期限管理，牌照和保险两者的有效日期一旦进入用户设定的最后时间节点，即可在系统后台自动提醒管理人员及时更换牌照和续保。</p>-->
+                        <!--保险录入表-->
+                        <!--车辆录入-->
+                        <h3>保险录入表</h3>
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">车牌号</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="请输入车牌号">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">保险公司</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="请输入原始车牌号">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">保险金额</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="颜色">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">保险日起</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="品牌">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">保险类型</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="购买价格">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">保险日止</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="购买日期">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">备注</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="其他信息">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <div class="checkbox">
+                                        <label>
+                                        <input type="checkbox">同意相关条例
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-default">提交</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <!--<div class="content_footer">

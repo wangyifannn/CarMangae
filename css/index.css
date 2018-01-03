@@ -30,3 +30,37 @@ body {
     margin: 0px;
     margin-top: 10px;
 }
+
+
+/*carTypeIn*/
+
+#carTypeIn {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.form-horizontal {
+    border: 1px solid red;
+    background: #1C232F;
+    margin-top: 50px;
+}
+
+.form-group label {
+    color: #A1A2A4;
+}
+
+.form-group input {
+    background: transparent;
+    /*color: #A1A2A4;*/
+}
+
+#carTypeIn h3,
+#paizhao h3 {
+    color: #047AF7;
+}
+
+#btn_mytetail,
+#btn_mydel {
+    border: none;
+    background: #047AF7;
+}
