@@ -1,0 +1,96 @@
+/*表格样式*/
+
+#table {
+    border: 1px solid white;
+    border-right: 1px solid red;
+    /*margin-top: 120px;*/
+    /*padding-top: 100px;*/
+}
+
+.fixed-table-body {
+    /*height: 533px;*/
+    /*margin-top: 100px;*/
+    /*border: 1px solid red;*/
+    color: white;
+}
+
+.keep-open .dropdown-menu {
+    background: #074587;
+}
+
+.btn {
+    font-size: 10px;
+    padding: 3px 9px;
+}
+
+.table-hover>tbody>tr:hover {
+    /*background-color: #337AB7;*/
+    background-color: #494A5F;
+    cursor: pointer;
+}
+
+.fixed-table-container tbody .selected td {
+    background-color: #337AB7;
+}
+
+#toolbar {
+    position: relative;
+    margin-bottom: 35px;
+}
+
+#toolbar span {
+    color: #1471EE;
+}
+
+#toolbar .form-control {
+    width: 135%;
+    height: 22px;
+    padding: 2px 1px;
+    font-size: 8px;
+}
+
+.pull-right .form-control {
+    height: 22px;
+}
+
+.import-mdoel_select {
+    position: absolute;
+    left: 70px;
+    top: 0px;
+    /*display: inline-block;*/
+}
+
+.fixed-table-pagination .pagination a {
+    padding: 1px 5px;
+}
+
+.fixed-table-container tbody td {
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+
+.fixed-table-container thead th {
+    border-left: 1px solid white;
+}
+
+.btn-primary {
+    background: #1471EE;
+}
+
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover {
+    background: #1471EE;
+}
+
+.table-responsive h3 {
+    color: #1471EE;
+}
+
+.pagination-info,
+.page-list {
+    color: white;
+}

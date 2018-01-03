@@ -10,6 +10,23 @@ body {
 
 .content_center {
     width: 100%;
-    height: 700px;
-    border: 1px solid #047AF7;
+    /*height: 700px;*/
+    /*border: 1px solid #047AF7;*/
+}
+
+.tab-content>.active {
+    display: block;
+}
+
+.tab-content>.tab-pane {
+    display: none;
+}
+
+.pull-left.pagination-detail {
+    margin-top: 20px;
+}
+
+.pagination {
+    margin: 0px;
+    margin-top: 10px;
 }

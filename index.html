@@ -9,13 +9,25 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap-3.3.7.min.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/jquery.mCustomScrollbar.min.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+    <!--<link rel="stylesheet" type="text/css" href="./css/bootstrap-3.3.7.min.css">-->
     <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link rel="stylesheet" type="text/css" href="./css/mytable.css">
 
     <script src="./assets/js/jquery-1.11.0.min.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
-    <script src="assets/js//jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="assets/js/custom.js"></script>
+    <script src="assets/js//jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="./js/indextable.js"></script>
 
+    <style>
+        .tab-pane {
+            display: none;
+        }
+        
+        .tab-pane.active {
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
@@ -39,14 +51,14 @@
                     </div>
                 </div>
                 <!-- sidebar-header  -->
-                <div class="sidebar-search">
+                <!--<div class="sidebar-search">
                     <div>
                         <div class="input-group">
                             <input type="text" class="form-control search-menu" placeholder="Search for...">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
                         </div>
                     </div>
-                </div>
+                </div>-->
                 <!-- sidebar-search  -->
                 <div class="sidebar-menu">
                     <ul id="myTab" class="ul_box">
@@ -56,8 +68,7 @@
                             </a>
                             <div class="sidebar-submenu">
                                 <ul>
-                                    <li class="active"><a href="#guiji" data-toggle="tab">车辆行驶轨迹<span class="label label-success">10</span></a> </li>
-                                    <li><a href="#zhuangtai" data-toggle="tab">车辆状态信息</a></li>
+                                    <li class="active"><a href="#guiji" data-toggle="tab">车辆列表<span class="label label-success">10</span></a> </li>
                                     <li><a href="#gaojing" data-toggle="tab">车辆告警信息</a></li>
                                     <li><a href="#paizhao" data-toggle="tab">车辆牌照保险管理</a></li>
                                 </ul>
@@ -109,18 +120,43 @@
                     试验车辆管理系统
                 </div>
                 <div class="content_center" class="tab-content">
-                    <div class="tab-pane fade in active" id="guiji">
-                        <p> 用于记录试验车辆的行驶轨迹，可根据车速和时间两种方式自动切换两种记录车辆轨迹方式，以有别于普通的车辆管理系统需人工设置记录方式，可合理减少数据流量，并可根据轨迹计算生成车辆行驶里程等相关信息，上述数据在GPRS信号良好的情况下可实时传输（延迟1~3秒）至系统数据库，在GPRS信号中断的情况下可缓存至GPS记录仪中，缓存时间可长达七天，一旦GPRS信息恢复可在3分钟内迅速传输至系统数据库中。 行驶轨迹可通过内置的优化算法进行细化处理，减少轨迹回放时服务器端的处理量，并可同时在电子地图上观看跟踪，提升用户体验。
-                        </p>
+                    <div class="tab-pane in active" id="guiji">
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table id="table" data-toggle="table" data-url="./json/datatable.json" data-show-export="true" data-toolbar="#toolbar" data-checkbox="true" data-show-columns="true" data-search="true" data-data-type="json" data-show-refresh="true" data-show-toggle="true"
+                                    data-show-columns="true" data-sort-name="id" data-page-list="[15, 30, 45, All]" data-page-size="12" data-side-pagination="client" data-pagination="true" data-show-pagination-switch="true">
+                                    <h3>车辆列表</h3>
+                                    <div id="toolbar" style="display: inline-block">
+                                        <span>导出模式：</span>
+                                        <select class="form-control import-mdoel_select">
+                                                    <option value="">导出当前页数据</option>
+                                                    <option value="all">导出全部数据</option>
+                                                    <option value="selected">导出选中数据</option>
+                                                </select>
+                                    </div>
+                                    <thead>
+                                        <tr>
+                                            <th data-field="state" data-checkbox="true" data-width="5%" data-select-item-name="选中"></th>
+                                            <th data-field="id" data-align="center" data-width="10%" data-height="10">编号</th>
+                                            <th data-field="carid" data-align="center" data-width="10%">车牌号</th>
+                                            <th data-field="color" data-align="center" data-width="10%">颜色</th>
+                                            <th data-field="brand" data-align="center" data-width="10%">品牌</th>
+                                            <th data-field="cat" data-align="center" data-width="10%">类型</th>
+                                            <th data-field="status" data-align="center" data-width="10%">状态</th>
+                                            <th data-field="data" data-align="center" data-width="15%">登记日期</th>
+                                            <th data-field="operate" data-align="center" data-width="10%" data-events=operateEvents1 data-formatter=operateFormatter1>操作 </th>
+                                            <th data-field="operate" data-align="center" data-width="10%" data-events=operateEvents2 data-formatter=operateFormatter2>操作 </th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
                     </div>
-                    <div class="tab-pane fade" id="zhuangtai">
-                        <p>用于显示车辆的行驶、停驶、熄火以及车速等多种信息，便于管理人员及时掌握车辆使用状态。</p>
-                    </div>
-                    <div class="tab-pane fade" id="gaojing">
+                    <div class="tab-pane" id="gaojing">
                         <p>用于被管理车辆的超速行驶管理，可形成告警信息列表。 告警信息内容：车号、驾驶员、超速地点、当时车速
                         </p>
                     </div>
-                    <div class="tab-pane fade" id="paizhao">
+                    <div class="tab-pane" id="paizhao">
                         <p>用于车辆临时牌照有效期限以及保险的有效期限管理，牌照和保险两者的有效日期一旦进入用户设定的最后时间节点，即可在系统后台自动提醒管理人员及时更换牌照和续保。</p>
                     </div>
                 </div>
@@ -133,5 +169,11 @@
     </div>
     <!-- page-wrapper -->
 </body>
+<script type="text/javascript" src="./js/FileSaver.min.js"></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.js"></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/bootstrap-table/1.11.1/extensions/export/bootstrap-table-export.js"></script>
+<script type="text/javascript" src="./js/tableExport.min.js"></script>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.js"></script>
 
 </html>
