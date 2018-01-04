@@ -32,17 +32,21 @@ body {
 }
 
 
-/*carTypeIn*/
+/*carTypeIn 车辆录入表单*/
 
 #carTypeIn {
     width: 70%;
     margin: 0 auto;
+    /*padding-top: 30px;*/
 }
 
 .form-horizontal {
-    border: 1px solid red;
+    /*border: 1px solid red;*/
+    border: 2px solid #A1A2A4;
+    box-shadow: 1px 2px 35px #A1A2A4;
     background: #1C232F;
     margin-top: 50px;
+    padding-top: 40px;
 }
 
 .form-group label {
@@ -55,7 +59,8 @@ body {
 }
 
 #carTypeIn h3,
-#paizhao h3 {
+#paizhao h3,
+#driverTypeIn h3 {
     color: #047AF7;
 }
 
@@ -63,4 +68,20 @@ body {
 #btn_mydel {
     border: none;
     background: #047AF7;
+}
+
+.page-content::after {
+    content: '';
+    clear: both;
+    display: block;
+    /*border: 1px solid gold;*/
+    /*border: none;*/
+}
+
+.container-fluid:after {
+    /*border: none;*/
+    content: '';
+    clear: both;
+    display: block;
+    /*border: 1px solid red;*/
 }

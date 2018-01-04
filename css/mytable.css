@@ -4,12 +4,10 @@
     /*border: 1px solid red;*/
 }
 
-#table {
+table {
     border: 2px solid #C7C7C7;
-    /*border-right: 5px solid green;*/
-    /*border-right: 1px solid red;*/
-    /*margin-top: 120px;*/
-    /*padding-top: 100px;*/
+    /*border: 2px solid red;*/
+    /*z-index: 33;*/
 }
 
 .fixed-table-body {
@@ -35,16 +33,16 @@
     background-color: #337AB7;
 }
 
-#toolbar {
+.toolbar {
     position: relative;
     margin-bottom: 35px;
 }
 
-#toolbar span {
+.toolbar span {
     color: #1471EE;
 }
 
-#toolbar .form-control {
+.toolbar .form-control {
     width: 135%;
     height: 22px;
     padding: 2px 1px;
