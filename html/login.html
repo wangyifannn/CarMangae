@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>登录</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-3.3.7.min.css">
+    <!--<link href="css/style.css" rel="stylesheet">-->
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        body {
+            width: 100%;
+            height: 100%;
+            min-width: 1000px;
+            background: url("../img/login/login_bg.png")
+        }
+        
+        .header {
+            width: 100%;
+            height: 50px;
+            color: black;
+            padding-left: 50px;
+            font-size: 30px;
+            line-height: 50px;
+            background: white;
+            /*text-align: center;*/
+        }
+        
+        .login_box {
+            width: 480px;
+            height: 500px;
+            float: right;
+            margin-top: 130px;
+            margin-right: 140px;
+            background: url("../img/login/loginbox_bg.png");
+            background-size: 100% 100%;
+            /*border: 1px solid red;*/
+        }
+        
+        .box_title {
+            margin-top: 80px;
+            margin-left: 110px;
+            font-size: 20px;
+        }
+        
+        .search-menu {
+            background: transparent;
+            color: white;
+            border: none;
+            width: 4%;
+        }
+        
+        .user_group,
+        .pass_group {
+            width: 260px;
+            border: 1px solid white;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+        
+        .user_group {
+            /*margin-top: 100px;*/
+        }
+        
+        .user_input,
+        .pass_input {
+            /*border: 1px solid red;*/
+            background: transparent;
+            margin-top: 4px;
+            width: 95%;
+            outline: none;
+            border: none;
+        }
+        
+        .language_group {
+            width: 55%;
+            margin: 0 auto;
+            /*border: 1px solid red;*/
+            margin-top: 40px;
+            /*margin-left: */
+        }
+        
+        .china_radio {
+            margin-left: 20px !important;
+            display: inline-block;
+        }
+        
+        .login_btn {
+            width: 80px;
+            height: 30px;
+            text-align: center;
+            font-size: 16px;
+            border-radius: 4px;
+            margin-left: 290px;
+            margin-top: 40px;
+            background: #0623B4;
+            border: none;
+            color: white;
+        }
+        /*设置placeholder的颜色*/
+        
+         ::-webkit-input-placeholder {
+            /* WebKit browsers */
+            color: white;
+        }
+        
+         :-moz-placeholder {
+            /* Mozilla Firefox 4 to 18 */
+            color: white;
+        }
+        
+         ::-moz-placeholder {
+            /* Mozilla Firefox 19+ */
+            color: white;
+        }
+        
+         :-ms-input-placeholder {
+            /* Internet Explorer 10+ */
+            color: white;
+        }
+        /*input框自动填充为黄色的解决方法*/
+        
+        input:-webkit-autofill {
+            box-shadow: 0 0 0px 1000px #0A2257 inset; //#0A2257表示页面显示的背景色
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="header">
+            实验车辆管理系统
+        </div>
+        <div class="login_box">
+            <div class="box_title">用户登录</div>
+            <!--用户名-->
+            <div class="user_group">
+                <div>
+                    <div class="input-group">
+                        <span class="input-group-addon search-menu"><i class="glyphicon glyphicon-user"></i></span>
+                        <input type="text" class="user_input" placeholder="请输入用户名">
+                    </div>
+                </div>
+            </div>
+            <!--密码-->
+            <div class="pass_group">
+                <div>
+                    <div class="input-group">
+                        <span class="input-group-addon search-menu"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input type="pass" class="pass_input" placeholder="请输入密码">
+                    </div>
+                </div>
+            </div>
+            <!--语言选择-->
+            <div class="language_group">
+                登录语言：
+                <input class="eng_radio" type="radio" name="" value="英文">英文
+                <input class="china_radio" type="radio" name="" value="中文">中文
+            </div>
+            <!--登录按钮-->
+            <div class="loginbtn_group">
+                <input class="login_btn" type="button" name="" value="登录">
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    var login_btn = document.getElementsByClassName("login_btn")[0];
+    login_btn.onclick = function() {
+        window.location.href = "../index.html";
+    }
+</script>
+
+</html>

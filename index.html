@@ -58,6 +58,7 @@
 
                 <div class="sidebar-menu">
                     <ul id="myTab" class="ul_box">
+                        <li class="header-menu"><span>主界面</span></li>
                         <li class="header-menu"><span>车辆管理</span></li>
                         <li class="sidebar-dropdown">
                             <a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>车辆基本管理</span><span class="badge">4</span>
@@ -92,6 +93,9 @@
                         <li class="header-menu"><span>驾驶员管理</span></li>
                         <li><a href="#driverList" data-toggle="tab"><i class="glyphicon glyphicon-cog"></i><span>驾驶员列表</span></a></li>
                         <li><a href="#driverTypeIn" data-toggle="tab"><i class="glyphicon glyphicon-cog"></i><span>驾驶员录入</span></a></li>
+                        <li class="header-menu"><span>数据管理</span></li>
+                        <li><a href="#driverList" data-toggle="tab"><i class="glyphicon glyphicon-cog"></i><span>实时数据</span></a></li>
+                        <li><a href="#driverTypeIn" data-toggle="tab"><i class="glyphicon glyphicon-cog"></i><span>历史数据</span></a></li>
                         <li class="header-menu"><span>日志管理</span></li>
                         <li><a href="#systemLog" data-toggle="tab"><i class="glyphicon glyphicon-asterisk"></i><span>系统日志</span></a></li>
                         <li><a href="#approveLog" data-toggle="tab"><i class="glyphicon glyphicon-asterisk"></i><span>审批日志</span></a></li>
@@ -440,6 +444,12 @@
     //     var c_iframe = document.getElementById("iframebg");
     //     c_iframe.src = c_iframe.src + "#" + b_width + "|" + b_height; // 这里通过hash传递b.htm的宽高
     // })();
+    //点击注销按钮，进入登录页面
+    $(".glyphicon-off").click(function() {
+        // alert("a");
+        window.localStorage.clear;
+        window.location.href = "../汽车管理系统/html/login.html";
+    })
 </script>
 
 </html>
