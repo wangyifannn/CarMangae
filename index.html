@@ -37,6 +37,10 @@
             color: #1B6DDA !important;
             font-weight: bolder;
         }
+        
+        .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li.active a {
+            color: #1B6DDA;
+        }
     </style>
 </head>
 
@@ -54,58 +58,89 @@
                     </div>
                     <div class="user-info">
                         <span class="user-name">王 <strong>先生</strong></span>
-                        <span class="user-role">Administrator</span>
+                        <span class="user-role">系统管理员</span>
                         <div class="user-status">
                             <a href="#"><span class="label label-success">Online</span></a>
                         </div>
                     </div>
                 </div>
-
                 <div class="sidebar-menu">
                     <ul id="myTab" class="ul_box">
-                        <li class="header-menu"><a href="#home" class="home" data-toggle="tab">主界面</a>
-                        </li>
-                        <li class="header-menu"><span>车辆管理</span></li>
+                        <!--主页-->
                         <li class="sidebar-dropdown">
-                            <a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>车辆基本管理</span><span class="badge">4</span>
+                            <a href="#"><i class="glyphicon glyphicon-home"></i><span>主页</span><span class="badge">1</span>
+                            </a>
+                            <div class="sidebar-submenu" style="display: block;">
+                                <ul>
+                                    <li class="active"><a href="#carmap" data-toggle="tab">车辆地图</a> </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!--车辆管理-->
+                        <li class="sidebar-dropdown">
+                            <a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>车辆管理</span><span class="badge">4</span>
                             </a>
                             <div class="sidebar-submenu">
                                 <ul>
-                                    <li class="active"><a href="#guiji" data-toggle="tab">车辆列表<span class="label label-success">10</span></a> </li>
+                                    <li><a href="#carTrack" data-toggle="tab">车辆轨迹</a> </li>
+                                    <li><a href="#carList" data-toggle="tab">车辆列表</a></li>
                                     <li><a href="#carTypeIn" data-toggle="tab">车辆录入</a></li>
-                                    <li><a href="#paizhao" data-toggle="tab">车辆保险</a></li>
+                                    <li><a href="#approveCar" data-toggle="tab">申请用车</a></li>
+
                                 </ul>
                             </div>
                         </li>
+                        <!--驾驶员管理-->
                         <li class="sidebar-dropdown">
-                            <a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>车辆出入管理</span><span class="badge">3</span></a>
+                            <a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>驾驶员管理</span><span class="badge">2</span></a>
                             <div class="sidebar-submenu">
                                 <ul>
-                                    <li><a href="#">申请用车</a></li>
-                                    <li><a href="#">申请还车</a></li>
-                                    <li><a href="#">安保岗位信息显示与道闸控制</a></li>
+                                    <li><a href="#driverList" data-toggle="tab"><span>驾驶员列表</span></a></li>
+                                    <li><a href="#driverTypeIn" data-toggle="tab"><span>驾驶员录入</span></a></li>
                                 </ul>
                             </div>
                         </li>
+                        <!--维修管理-->
                         <li class="sidebar-dropdown">
                             <a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>维修管理</span><span class="badge">2</span></a>
                             <div class="sidebar-submenu">
                                 <ul>
-                                    <li><a href="#">维修申请</a></li>
-                                    <li><a href="#">维修列表</a></li>
+                                    <li><a href="#maintainList" data-toggle="tab"><span>维修列表</span></a></li>
+                                    <li><a href="#maintainTypeIn" data-toggle="tab"><span>维修申请</span></a></li>
                                 </ul>
                             </div>
                         </li>
-                        <li class="header-menu"><span>驾驶员管理</span></li>
-                        <li><a href="#driverList" data-toggle="tab"><i class="glyphicon glyphicon-cog"></i><span>驾驶员列表</span></a></li>
-                        <li><a href="#driverTypeIn" data-toggle="tab"><i class="glyphicon glyphicon-cog"></i><span>驾驶员录入</span></a></li>
-                        <li class="header-menu"><span>数据管理</span></li>
-                        <li><a href="#driverList" data-toggle="tab"><i class="glyphicon glyphicon-cog"></i><span>实时数据</span></a></li>
-                        <li><a href="#driverTypeIn" data-toggle="tab"><i class="glyphicon glyphicon-cog"></i><span>历史数据</span></a></li>
-                        <li class="header-menu"><span>日志管理</span></li>
-                        <li><a href="#systemLog" data-toggle="tab"><i class="glyphicon glyphicon-asterisk"></i><span>系统日志</span></a></li>
-                        <li><a href="#approveLog" data-toggle="tab"><i class="glyphicon glyphicon-asterisk"></i><span>审批日志</span></a></li>
-                        <li><a href="#maintainLog" data-toggle="tab"><i class="glyphicon glyphicon-asterisk"></i><span>维修日志</span></a></li>
+                        <!--数据管理-->
+                        <li class="sidebar-dropdown">
+                            <a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>数据管理</span><span class="badge">2</span></a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li><a href="#currentData" data-toggle="tab"><span>实时数据</span></a></li>
+                                    <li><a href="#beforeData" data-toggle="tab"><span>历史数据</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!--日志管理-->
+                        <li class="sidebar-dropdown">
+                            <a href="#"><i class="glyphicon glyphicon-oil"></i><span>日志管理</span><span class="badge">3</span></a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li><a href="#systemLog" data-toggle="tab"><span>系统日志</span></a></li>
+                                    <li><a href="#approveLog" data-toggle="tab"><span>审批日志</span></a></li>
+                                    <li><a href="#maintainLog" data-toggle="tab"><span>维修日志</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!--权限管理-->
+                        <li class="sidebar-dropdown">
+                            <a href="#"><i class="glyphicon glyphicon-cog"></i><span>权限管理</span><span class="badge">2</span></a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li><a href="#rights" data-toggle="tab"><span>权限授予</span></a></li>
+                                    <li><a href="#role" data-toggle="tab"><span>用户角色</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
                     </ul>
                 </div>
                 <!-- sidebar-menu  -->
@@ -113,7 +148,7 @@
             <!-- sidebar-content  -->
             <div class="sidebar-footer">
                 <a href="#"><i class="glyphicon glyphicon-comment"></i><span class="label label-warning notification">3</span></a>
-                <a href="#"><i class="glyphicon glyphicon-envelope"></i><span class="label label-success notification">7</span></a>
+                <!--<a href="#"><i class="glyphicon glyphicon-envelope"></i><span class="label label-success notification">7</span></a>-->
                 <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
                 <a href="#"><i class="glyphicon glyphicon-off"></i></a>
             </div>
@@ -125,19 +160,23 @@
 
                 <div class="content_center" class="tab-content">
                     <!--主界面-->
-                    <div class="tab-pane in active" id="home">
-                        <iframe class="iframebg" src="../map/轨迹.html" width="100%" height="800px" scrolling="no" frameborder="no" border="0"></iframe>
-
-
+                    <div class="tab-pane in active" id="carmap">
+                        <iframe class="iframebg" src="../map/guiji3.html" width="100%" height="800px" scrolling="no" frameborder="no" border="0"></iframe>
                     </div>
                     <!--车辆相关-->
-                    <div class="tab-pane" id="guiji">
+                    <!--车辆轨迹-->
+                    <div class="tab-pane" id="carTrack">
+                        车辆轨迹
+                        <iframe class="iframebg" src="../map/轨迹.html" width="100%" height="800px" scrolling="no" frameborder="no" border="0"></iframe>
+
+                    </div>
+                    <div class="tab-pane" id="carList">
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table id="table" data-toggle="table" data-url="./json/datatable.json" data-show-export="true" data-toolbar="#toolbar" data-checkbox="true" data-show-columns="true" data-search="true" data-data-type="json" data-show-refresh="true" data-show-toggle="true"
                                     data-show-columns="true" data-sort-name="id" data-page-list="[15, 30, 45, All]" data-page-size="12" data-side-pagination="client" data-pagination="true" data-show-pagination-switch="true">
-                                    <h3>车辆列表<a class="home_link" href="./html/home.html"><span>所有车辆<span></a></h3>
-                                    <div id="toolbar" class="toolbar" style="display: inline-block">
+                                    <h3>车辆列表</h3>
+                                    <div id="toolbar" class="toolbar" style="display: none">
                                         <span>导出模式：</span>
                                         <select class="form-control import-mdoel_select">
                                                     <option value="">导出当前页数据</option>
@@ -147,14 +186,14 @@
                                     </div>
                                     <thead>
                                         <tr>
-                                            <th data-field="state" data-checkbox="true" data-width="2%" data-select-item-name="选中"></th>
-                                            <th data-field="id" data-align="center" data-width="8%" data-height="10">编号</th>
+                                            <th data-field="id" data-align="center" data-width="5%" data-height="10">序号</th>
+                                            <th data-field="id" data-align="center" data-width="8%" data-height="10">车辆编号</th>
                                             <th data-field="carid" data-align="center" data-width="10%">车牌号</th>
-                                            <th data-field="color" data-align="center" data-width="10%">颜色</th>
-                                            <th data-field="brand" data-align="center" data-width="8%">品牌</th>
-                                            <th data-field="cat" data-align="center" data-width="10%">类型</th>
-                                            <th data-field="status" data-align="center" data-width="10%">状态</th>
-                                            <th data-field="data" data-align="center" data-width="15%">登记日期</th>
+                                            <th data-field="gpsid" data-align="center" data-width="10%">GPS编号</th>
+                                            <th data-field="brand" data-align="center" data-width="8%">车辆名称</th>
+                                            <th data-field="status" data-align="center" data-width="10%">授权状态</th>
+                                            <!--<th data-field="data" data-align="center" data-width="15%">登记日期</th>-->
+                                            <th data-field="approvedata" data-align="center" data-width="10%">允许时间</th>
                                             <th data-field="operate" data-align="center" data-width="10%" data-events=operateEvents data-formatter=operateFormatter>操作 </th>
                                         </tr>
                                     </thead>
@@ -235,7 +274,6 @@
                                 </div>
                             </div>
                         </form>
-
                     </div>
                     <div class="tab-pane" id="paizhao">
                         <!--<p>用于车辆临时牌照有效期限以及保险的有效期限管理，牌照和保险两者的有效日期一旦进入用户设定的最后时间节点，即可在系统后台自动提醒管理人员及时更换牌照和续保。</p>-->
@@ -306,6 +344,11 @@
                                     <button type="submit" class="btn btn-default">提交</button>
                                 </div>
                             </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane" id="approveCar">
+                        <form>
+                            申请用车
                         </form>
                     </div>
                     <!--驾驶员相关-->
@@ -416,6 +459,212 @@
                         </form>
 
                     </div>
+                    <!--驾驶员相关-->
+                    <!--驾驶员列表-->
+                    <div class="tab-pane" id="driverList">
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table id="table2" data-toggle="table" data-url="./json/driverList.json" data-show-export="true" data-toolbar="#toolbar2" data-checkbox="true" data-show-columns="true" data-search="true" data-data-type="json" data-show-refresh="true" data-show-toggle="true"
+                                    data-show-columns="true" data-sort-name="id" data-page-list="[15, 30, 45, All]" data-page-size="12" data-side-pagination="client" data-pagination="true" data-show-pagination-switch="true">
+                                    <h3>驾驶员列表</h3>
+                                    <div id="toolbar2" class="toolbar" style="display: inline-block">
+                                        <span>导出模式：</span>
+                                        <select class="form-control import-mdoel_select">
+                                                    <option value="">导出当前页数据</option>
+                                                    <option value="all">导出全部数据</option>
+                                                    <option value="selected">导出选中数据</option>
+                                                </select>
+                                    </div>
+                                    <thead>
+                                        <tr>
+                                            <th data-field="state" data-checkbox="true" data-width="2%" data-select-item-name="选中"></th>
+                                            <th data-field="id" data-align="center" data-width="8%" data-height="10">编号</th>
+                                            <th data-field="name" data-align="center" data-width="10%">姓名</th>
+                                            <th data-field="sex" data-align="center" data-width="10%">性别</th>
+                                            <th data-field="age" data-align="center" data-width="8%">年龄</th>
+                                            <th data-field="id" data-align="center" data-width="15%">驾驶证号</th>
+                                            <th data-field="databegin" data-align="center" data-width="10%">有效期起</th>
+                                            <th data-field="dataend" data-align="center" data-width="10%">有效期至</th>
+                                            <th data-field="operate" data-align="center" data-width="10%" data-events=operateEventsdrive data-formatter=operateFormatterdriver>操作 </th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!--驾驶员录入-->
+                    <div class="tab-pane" id="driverTypeIn">
+                        <h3>驾驶员录入表</h3>
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">姓名</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="请输入车牌号">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">性别</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="请输入原始车牌号">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">年龄</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="颜色">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">驾驶证号</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="品牌">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">身份证号</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="购买日期">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">驾照有效日起</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="购买价格">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">驾照有效日止</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="车辆类型">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">备注</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="其他信息">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <div class="checkbox">
+                                        <label>
+                                        <input type="checkbox">同意相关条例
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-default">提交</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                    <!--维修管理-->
+                    <!--维修列表-->
+                    <div class="tab-pane" id="maintainList">
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table id="table2" data-toggle="table" data-url="./json/driverList.json" data-show-export="true" data-toolbar="#toolbar2" data-checkbox="true" data-show-columns="true" data-search="true" data-data-type="json" data-show-refresh="true" data-show-toggle="true"
+                                    data-show-columns="true" data-sort-name="id" data-page-list="[15, 30, 45, All]" data-page-size="12" data-side-pagination="client" data-pagination="true" data-show-pagination-switch="true">
+                                    <h3>维修列表</h3>
+                                    <div id="toolbar2" class="toolbar" style="display: inline-block">
+                                        <span>导出模式：</span>
+                                        <select class="form-control import-mdoel_select">
+                                                    <option value="">导出当前页数据</option>
+                                                    <option value="all">导出全部数据</option>
+                                                    <option value="selected">导出选中数据</option>
+                                                </select>
+                                    </div>
+                                    <thead>
+                                        <tr>
+                                            <th data-field="state" data-checkbox="true" data-width="2%" data-select-item-name="选中"></th>
+                                            <th data-field="id" data-align="center" data-width="8%" data-height="10">编号</th>
+                                            <th data-field="name" data-align="center" data-width="10%">姓名</th>
+                                            <th data-field="sex" data-align="center" data-width="10%">性别</th>
+                                            <th data-field="age" data-align="center" data-width="8%">年龄</th>
+                                            <th data-field="id" data-align="center" data-width="15%">驾驶证号</th>
+                                            <th data-field="databegin" data-align="center" data-width="10%">有效期起</th>
+                                            <th data-field="dataend" data-align="center" data-width="10%">有效期至</th>
+                                            <th data-field="operate" data-align="center" data-width="10%" data-events=operateEventsdrive data-formatter=operateFormatterdriver>操作 </th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!--维修申请-->
+                    <div class="tab-pane" id="maintainTypeIn">
+                        <h3>维修申请表</h3>
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">车辆编号</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="请输入车辆编号">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">车牌号</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="请输入车牌号">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">维修原因</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="请输入维修原因">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">申请人</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="请输入申请人">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">身份证号</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="购买日期">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">备注</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="其他信息">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <div class="checkbox">
+                                        <label>
+                                        <input type="checkbox">同意相关条例
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-default">提交</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                    <!--实时数据-->
+                    <div class="tab-pane" id="currentData">
+                        实时数据
+                    </div>
+                    <div class="tab-pane" id="beforeData">
+                        历史数据
+                    </div>
                     <!--日志管理-->
                     <!--系统日志-->
                     <div class="tab-pane" id="systemLog">
@@ -431,6 +680,15 @@
                     <div class="tab-pane" id="maintainLog">
                         <iframe class="iframebg" id="iframebg" src="./html/maintainlog.html" width="100%" height="800px" scrolling="no" frameborder="no" border="0"></iframe>
                         <!--<iframe src="./html/maintainlog.html" width="100%" height="auto"></iframe>-->
+                    </div>
+                    <!--权限-->
+                    <!--权限授予-->
+                    <div class="tab-pane" id="rights">
+                        权限授予
+                    </div>
+                    <!--用户角色-->
+                    <div class="tab-pane" id="role">
+                        用户角色
                     </div>
                 </div>
                 <!--<div class="content_footer">
@@ -448,12 +706,19 @@
 
 <script type="text/javascript" src="https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.js"></script>
 <script>
-    // (function autoHeight() {
-    //     var b_width = Math.max(document.body.scrollWidth, document.body.clientWidth);
-    //     var b_height = Math.max(document.body.scrollHeight, document.body.clientHeight);
-    //     var c_iframe = document.getElementById("iframebg");
-    //     c_iframe.src = c_iframe.src + "#" + b_width + "|" + b_height; // 这里通过hash传递b.htm的宽高
-    // })();
+    // 解决侧边菜单点击 active失效问题
+    $(".sidebar-dropdown ul li").click(function() {
+        // console.log(this);
+        // console.log($(this).parent().parent().parent().siblings());
+        var sib = $(this).parent().parent().parent().siblings();
+        for (var i = 0; i < sib.length; i++) {
+            var li2 = sib[i].children[1].children[0];
+            for (var j = 0; j < li2.children.length; j++) {
+                $(li2.children[j]).removeClass("active");
+            }
+        }
+    })
+
     //点击注销按钮，进入登录页面
     $(".glyphicon-off").click(function() {
         // alert("a");

@@ -25,7 +25,7 @@
 
 @media screen and (min-width: 768px) {
     .page-wrapper.toggled .page-content {
-        padding-left: 300px;
+        padding-left: 217px;
     }
 }
 
@@ -38,7 +38,7 @@
 /*----------------sidebar-wrapper----------------*/
 
 .sidebar-wrapper {
-    width: 300px;
+    width: 220px;
     background: #1c232f;
     height: 100%;
     max-height: 100%;
@@ -205,14 +205,15 @@
     font-style: normal;
     display: inline-block;
     text-align: center;
+    line-height: 40px;
     text-decoration: none;
     background: 0 0;
     speak: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     position: absolute;
-    right: 15px;
-    top: 10px;
+    right: 10px;
+    top: 1px;
 }
 
 .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu ul {
@@ -263,7 +264,8 @@
 
 .sidebar-wrapper .sidebar-menu .sidebar-dropdown.active>a:after {
     transform: rotate(90deg);
-    right: 17px;
+    right: 10px;
+    top: 5px;
 }
 
 
