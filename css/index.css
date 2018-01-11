@@ -34,7 +34,7 @@ body {
 
 /*carTypeIn 车辆录入表单*/
 
-#carTypeIn {
+.tableTypein {
     width: 70%;
     margin: 0 auto;
     /*padding-top: 30px;*/
@@ -44,7 +44,7 @@ body {
     /*border: 1px solid red;*/
     border: 2px solid #A1A2A4;
     box-shadow: 1px 2px 35px #A1A2A4;
-    background: #1C232F;
+    /*background: #1C232F;*/
     margin-top: 50px;
     padding-top: 40px;
 }
@@ -60,7 +60,8 @@ body {
 
 #carTypeIn h3,
 #paizhao h3,
-#driverTypeIn h3 {
+#driverTypeIn h3,
+.tableTypein h3 {
     color: #047AF7;
 }
 

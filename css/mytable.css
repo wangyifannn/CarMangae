@@ -4,6 +4,10 @@
     /*border: 1px solid red;*/
 }
 
+.table-responsive {
+    padding-top: 50px;
+}
+
 table {
     border: 2px solid #C7C7C7;
     /*border: 2px solid red;*/
@@ -33,21 +37,24 @@ table {
     background-color: #337AB7;
 }
 
-.toolbar {
+
+/*.toolbar {
     position: relative;
-    margin-bottom: 35px;
-}
+    margin-top: -25px;
+}*/
 
-.toolbar span {
+
+/*.toolbar span {
     color: #1471EE;
-}
+}*/
 
-.toolbar .form-control {
+
+/*.toolbar .form-control {
     width: 135%;
     height: 22px;
     padding: 2px 1px;
     font-size: 8px;
-}
+}*/
 
 .pull-right .form-control {
     height: 22px;
@@ -92,6 +99,7 @@ table {
 
 .table-responsive h3 {
     color: #1471EE;
+    margin-top: -2px;
 }
 
 .pagination-info,
@@ -103,7 +111,14 @@ table {
     width: 85%;
 }
 
-#carTypeIn .form-horizontal {
-    /*margin: 0 auto;*/
-    /*border: 1px solid blue;*/
+#carTypeIn .form-horizontal {}
+
+
+/*#table2 .pull-right {
+    margin-top: -10px;
+}*/
+
+.fixed-table-toolbar {
+    /*margin-bottom: 30px;*/
+    /*padding-top: -30px;*/
 }

@@ -67,15 +67,11 @@
                 <div class="sidebar-menu">
                     <ul id="myTab" class="ul_box">
                         <!--主页-->
-                        <li class="sidebar-dropdown">
-                            <a href="#"><i class="glyphicon glyphicon-home"></i><span>主页</span><span class="badge">1</span>
+                        <li class="active">
+                            <a href="#carmap" data-toggle="tab"><i class="glyphicon glyphicon-home"></i>车辆地图
                             </a>
-                            <div class="sidebar-submenu" style="display: block;">
-                                <ul>
-                                    <li class="active"><a href="#carmap" data-toggle="tab">车辆地图</a> </li>
-                                </ul>
-                            </div>
                         </li>
+
                         <!--车辆管理-->
                         <li class="sidebar-dropdown">
                             <a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>车辆管理</span><span class="badge">4</span>
@@ -125,9 +121,9 @@
                             <a href="#"><i class="glyphicon glyphicon-oil"></i><span>日志管理</span><span class="badge">3</span></a>
                             <div class="sidebar-submenu">
                                 <ul>
-                                    <li><a href="#systemLog" data-toggle="tab"><span>系统日志</span></a></li>
-                                    <li><a href="#approveLog" data-toggle="tab"><span>审批日志</span></a></li>
                                     <li><a href="#maintainLog" data-toggle="tab"><span>维修日志</span></a></li>
+                                    <li><a href="#systemLog" data-toggle="tab"><span>车辆管理日志</span></a></li>
+                                    <li><a href="#approveLog" data-toggle="tab"><span>驾驶员管理日志</span></a></li>
                                 </ul>
                             </div>
                         </li>
@@ -148,7 +144,6 @@
             <!-- sidebar-content  -->
             <div class="sidebar-footer">
                 <a href="#"><i class="glyphicon glyphicon-comment"></i><span class="label label-warning notification">3</span></a>
-                <!--<a href="#"><i class="glyphicon glyphicon-envelope"></i><span class="label label-success notification">7</span></a>-->
                 <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
                 <a href="#"><i class="glyphicon glyphicon-off"></i></a>
             </div>
@@ -166,23 +161,21 @@
                     <!--车辆相关-->
                     <!--车辆轨迹-->
                     <div class="tab-pane" id="carTrack">
-                        车辆轨迹
                         <iframe class="iframebg" src="../map/轨迹.html" width="100%" height="800px" scrolling="no" frameborder="no" border="0"></iframe>
-
                     </div>
                     <div class="tab-pane" id="carList">
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table id="table" data-toggle="table" data-url="./json/datatable.json" data-show-export="true" data-toolbar="#toolbar" data-checkbox="true" data-show-columns="true" data-search="true" data-data-type="json" data-show-refresh="true" data-show-toggle="true"
                                     data-show-columns="true" data-sort-name="id" data-page-list="[15, 30, 45, All]" data-page-size="12" data-side-pagination="client" data-pagination="true" data-show-pagination-switch="true">
-                                    <h3>车辆列表</h3>
-                                    <div id="toolbar" class="toolbar" style="display: none">
-                                        <span>导出模式：</span>
+                                    <div id="toolbar" class="toolbar">
+                                        <h3>车辆列表</h3>
+                                        <!--<span>导出模式：</span>
                                         <select class="form-control import-mdoel_select">
                                                     <option value="">导出当前页数据</option>
                                                     <option value="all">导出全部数据</option>
                                                     <option value="selected">导出选中数据</option>
-                                                </select>
+                                                </select>-->
                                     </div>
                                     <thead>
                                         <tr>
@@ -192,16 +185,15 @@
                                             <th data-field="gpsid" data-align="center" data-width="10%">GPS编号</th>
                                             <th data-field="brand" data-align="center" data-width="8%">车辆名称</th>
                                             <th data-field="status" data-align="center" data-width="10%">授权状态</th>
-                                            <!--<th data-field="data" data-align="center" data-width="15%">登记日期</th>-->
                                             <th data-field="approvedata" data-align="center" data-width="10%">允许时间</th>
-                                            <th data-field="operate" data-align="center" data-width="10%" data-events=operateEvents data-formatter=operateFormatter>操作 </th>
+                                            <th data-field="operate" data-align="center" data-width="14%" data-events=operateEvents data-formatter=operateFormatter>操作 </th>
                                         </tr>
                                     </thead>
                                 </table>
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane" id="carTypeIn">
+                    <div class="tab-pane tableTypein" id="carTypeIn">
                         <!--车辆录入-->
                         <h3>汽车录入表</h3>
                         <form class="form-horizontal">
@@ -275,7 +267,7 @@
                             </div>
                         </form>
                     </div>
-                    <div class="tab-pane" id="paizhao">
+                    <div class="tab-pane tableTypein" id="paizhao">
                         <!--<p>用于车辆临时牌照有效期限以及保险的有效期限管理，牌照和保险两者的有效日期一旦进入用户设定的最后时间节点，即可在系统后台自动提醒管理人员及时更换牌照和续保。</p>-->
                         <!--保险录入表-->
                         <!--车辆录入-->
@@ -346,86 +338,48 @@
                             </div>
                         </form>
                     </div>
-                    <div class="tab-pane" id="approveCar">
-                        <form>
-                            申请用车
-                        </form>
-                    </div>
-                    <!--驾驶员相关-->
-                    <!--驾驶员列表-->
-                    <div class="tab-pane" id="driverList">
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table id="table2" data-toggle="table" data-url="./json/driverList.json" data-show-export="true" data-toolbar="#toolbar2" data-checkbox="true" data-show-columns="true" data-search="true" data-data-type="json" data-show-refresh="true" data-show-toggle="true"
-                                    data-show-columns="true" data-sort-name="id" data-page-list="[15, 30, 45, All]" data-page-size="12" data-side-pagination="client" data-pagination="true" data-show-pagination-switch="true">
-                                    <h3>驾驶员列表</h3>
-                                    <div id="toolbar2" class="toolbar" style="display: inline-block">
-                                        <span>导出模式：</span>
-                                        <select class="form-control import-mdoel_select">
-                                                    <option value="">导出当前页数据</option>
-                                                    <option value="all">导出全部数据</option>
-                                                    <option value="selected">导出选中数据</option>
-                                                </select>
-                                    </div>
-                                    <thead>
-                                        <tr>
-                                            <th data-field="state" data-checkbox="true" data-width="2%" data-select-item-name="选中"></th>
-                                            <th data-field="id" data-align="center" data-width="8%" data-height="10">编号</th>
-                                            <th data-field="name" data-align="center" data-width="10%">姓名</th>
-                                            <th data-field="sex" data-align="center" data-width="10%">性别</th>
-                                            <th data-field="age" data-align="center" data-width="8%">年龄</th>
-                                            <th data-field="id" data-align="center" data-width="15%">驾驶证号</th>
-                                            <th data-field="databegin" data-align="center" data-width="10%">有效期起</th>
-                                            <th data-field="dataend" data-align="center" data-width="10%">有效期至</th>
-                                            <th data-field="operate" data-align="center" data-width="10%" data-events=operateEventsdrive data-formatter=operateFormatterdriver>操作 </th>
-                                        </tr>
-                                    </thead>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <!--驾驶员录入-->
-                    <div class="tab-pane" id="driverTypeIn">
-                        <h3>驾驶员录入表</h3>
+                    <!--申请用车表-->
+                    <div class="tab-pane tableTypein" id="approveCar">
+                        <h3>申请用车表</h3>
                         <form class="form-horizontal">
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">姓名</label>
+                                <label for="inputEmail3" class="col-sm-2 control-label">车牌号</label>
                                 <div class="col-sm-10">
                                     <input type="email" class="form-control" id="inputEmail3" placeholder="请输入车牌号">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">性别</label>
+                                <label for="inputEmail3" class="col-sm-2 control-label">原车牌号</label>
                                 <div class="col-sm-10">
                                     <input type="email" class="form-control" id="inputEmail3" placeholder="请输入原始车牌号">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">年龄</label>
+                                <label for="inputEmail3" class="col-sm-2 control-label">颜色</label>
                                 <div class="col-sm-10">
                                     <input type="email" class="form-control" id="inputEmail3" placeholder="颜色">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">驾驶证号</label>
+                                <label for="inputEmail3" class="col-sm-2 control-label">品牌</label>
                                 <div class="col-sm-10">
                                     <input type="email" class="form-control" id="inputEmail3" placeholder="品牌">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">身份证号</label>
+                                <label for="inputEmail3" class="col-sm-2 control-label">购买日期</label>
                                 <div class="col-sm-10">
                                     <input type="email" class="form-control" id="inputEmail3" placeholder="购买日期">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">驾照有效日起</label>
+                                <label for="inputEmail3" class="col-sm-2 control-label">购买价格</label>
                                 <div class="col-sm-10">
                                     <input type="email" class="form-control" id="inputEmail3" placeholder="购买价格">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">驾照有效日止</label>
+                                <label for="inputEmail3" class="col-sm-2 control-label">车辆类型</label>
                                 <div class="col-sm-10">
                                     <input type="email" class="form-control" id="inputEmail3" placeholder="车辆类型">
                                 </div>
@@ -457,34 +411,31 @@
                                 </div>
                             </div>
                         </form>
-
                     </div>
-                    <!--驾驶员相关-->
+                    <!--s 驾驶员相关-->
                     <!--驾驶员列表-->
                     <div class="tab-pane" id="driverList">
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table id="table2" data-toggle="table" data-url="./json/driverList.json" data-show-export="true" data-toolbar="#toolbar2" data-checkbox="true" data-show-columns="true" data-search="true" data-data-type="json" data-show-refresh="true" data-show-toggle="true"
                                     data-show-columns="true" data-sort-name="id" data-page-list="[15, 30, 45, All]" data-page-size="12" data-side-pagination="client" data-pagination="true" data-show-pagination-switch="true">
-                                    <h3>驾驶员列表</h3>
-                                    <div id="toolbar2" class="toolbar" style="display: inline-block">
-                                        <span>导出模式：</span>
+                                    <div id="toolbar2" class="toolbar">
+                                        <h3>驾驶员列表</h3>
+                                        <!--<span>导出模式：</span>
                                         <select class="form-control import-mdoel_select">
                                                     <option value="">导出当前页数据</option>
                                                     <option value="all">导出全部数据</option>
                                                     <option value="selected">导出选中数据</option>
-                                                </select>
+                                                </select>-->
                                     </div>
                                     <thead>
                                         <tr>
-                                            <th data-field="state" data-checkbox="true" data-width="2%" data-select-item-name="选中"></th>
-                                            <th data-field="id" data-align="center" data-width="8%" data-height="10">编号</th>
+                                            <th data-field="id" data-align="center" data-width="8%" data-height="10">序号</th>
+                                            <th data-field="id" data-align="center" data-width="10%" data-height="10">驾驶员编号</th>
                                             <th data-field="name" data-align="center" data-width="10%">姓名</th>
                                             <th data-field="sex" data-align="center" data-width="10%">性别</th>
-                                            <th data-field="age" data-align="center" data-width="8%">年龄</th>
-                                            <th data-field="id" data-align="center" data-width="15%">驾驶证号</th>
-                                            <th data-field="databegin" data-align="center" data-width="10%">有效期起</th>
-                                            <th data-field="dataend" data-align="center" data-width="10%">有效期至</th>
+                                            <th data-field="age" data-align="center" data-width="8%">授权状态</th>
+                                            <th data-field="id" data-align="center" data-width="15%">身份证号</th>
                                             <th data-field="operate" data-align="center" data-width="10%" data-events=operateEventsdrive data-formatter=operateFormatterdriver>操作 </th>
                                         </tr>
                                     </thead>
@@ -493,31 +444,31 @@
                         </div>
                     </div>
                     <!--驾驶员录入-->
-                    <div class="tab-pane" id="driverTypeIn">
+                    <div class="tab-pane tableTypein" id="driverTypeIn">
                         <h3>驾驶员录入表</h3>
                         <form class="form-horizontal">
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">姓名</label>
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail3" placeholder="请输入车牌号">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="请输入驾驶员姓名">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">性别</label>
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail3" placeholder="请输入原始车牌号">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="请输入性别">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">年龄</label>
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail3" placeholder="颜色">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="请输入年龄">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">驾驶证号</label>
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail3" placeholder="品牌">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="请输入驾驶证号码">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -529,25 +480,19 @@
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">驾照有效日起</label>
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail3" placeholder="购买价格">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="驾照有效日起">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">驾照有效日止</label>
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail3" placeholder="车辆类型">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="驾照有效日止">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">备注</label>
                                 <div class="col-sm-10">
                                     <input type="email" class="form-control" id="inputEmail3" placeholder="其他信息">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-                                <div class="col-sm-10">
-                                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -567,32 +512,33 @@
                         </form>
 
                     </div>
-                    <!--维修管理-->
+                    <!--e 驾驶员相关-->
+
+                    <!--s 维修管理-->
                     <!--维修列表-->
                     <div class="tab-pane" id="maintainList">
                         <div class="panel-body">
                             <div class="table-responsive">
-                                <table id="table2" data-toggle="table" data-url="./json/driverList.json" data-show-export="true" data-toolbar="#toolbar2" data-checkbox="true" data-show-columns="true" data-search="true" data-data-type="json" data-show-refresh="true" data-show-toggle="true"
+                                <table id="table3" data-toggle="table" data-url="./json/datatable.json" data-show-export="true" data-toolbar="#toolbar3" data-checkbox="true" data-show-columns="true" data-search="true" data-data-type="json" data-show-refresh="true" data-show-toggle="true"
                                     data-show-columns="true" data-sort-name="id" data-page-list="[15, 30, 45, All]" data-page-size="12" data-side-pagination="client" data-pagination="true" data-show-pagination-switch="true">
-                                    <h3>维修列表</h3>
-                                    <div id="toolbar2" class="toolbar" style="display: inline-block">
-                                        <span>导出模式：</span>
-                                        <select class="form-control import-mdoel_select">
+                                    <div id="toolbar3" class="toolbar" style="display: inline-block">
+                                        <h3>维修列表</h3>
+                                        <!--<span>导出模式：</span>-->
+                                        <!--<select class="form-control import-mdoel_select">
                                                     <option value="">导出当前页数据</option>
                                                     <option value="all">导出全部数据</option>
                                                     <option value="selected">导出选中数据</option>
-                                                </select>
+                                                </select>-->
                                     </div>
                                     <thead>
                                         <tr>
-                                            <th data-field="state" data-checkbox="true" data-width="2%" data-select-item-name="选中"></th>
-                                            <th data-field="id" data-align="center" data-width="8%" data-height="10">编号</th>
-                                            <th data-field="name" data-align="center" data-width="10%">姓名</th>
-                                            <th data-field="sex" data-align="center" data-width="10%">性别</th>
-                                            <th data-field="age" data-align="center" data-width="8%">年龄</th>
-                                            <th data-field="id" data-align="center" data-width="15%">驾驶证号</th>
-                                            <th data-field="databegin" data-align="center" data-width="10%">有效期起</th>
-                                            <th data-field="dataend" data-align="center" data-width="10%">有效期至</th>
+                                            <!--<th data-field="state" data-checkbox="true" data-width="2%" data-select-item-name="选中"></th>-->
+                                            <th data-field="id" data-align="center" data-width="8%" data-height="10">序号</th>
+                                            <th data-field="carid" data-align="center" data-width="8%" data-height="10">车辆编号</th>
+                                            <th data-field="carid" data-align="center" data-width="10%">车牌号</th>
+                                            <th data-field="maintainCause" data-align="center" data-width="10%">维修原因</th>
+                                            <th data-field="name" data-align="center" data-width="8%">申请人</th>
+                                            <th data-field="id" data-align="center" data-width="15%">申请日期</th>
                                             <th data-field="operate" data-align="center" data-width="10%" data-events=operateEventsdrive data-formatter=operateFormatterdriver>操作 </th>
                                         </tr>
                                     </thead>
@@ -601,7 +547,7 @@
                         </div>
                     </div>
                     <!--维修申请-->
-                    <div class="tab-pane" id="maintainTypeIn">
+                    <div class="tab-pane tableTypein" id="maintainTypeIn">
                         <h3>维修申请表</h3>
                         <form class="form-horizontal">
                             <div class="form-group">
@@ -658,6 +604,8 @@
                         </form>
 
                     </div>
+                    <!--e 维修管理-->
+                    <!--s 数据管理-->
                     <!--实时数据-->
                     <div class="tab-pane" id="currentData">
                         实时数据
@@ -665,22 +613,90 @@
                     <div class="tab-pane" id="beforeData">
                         历史数据
                     </div>
-                    <!--日志管理-->
-                    <!--系统日志-->
+                    <!--e 数据管理-->
+
+                    <!--s 日志管理-->
+                    <!--车辆管理日志-->
                     <div class="tab-pane" id="systemLog">
-                        <!--<iframe src="./html/systemlog.html" width="100%" height="auto"></iframe>-->
-                        <iframe class="iframebg" src="./html/systemlog.html" width="100%" height="800px" scrolling="no" frameborder="no" border="0"></iframe>
+                        <!--<iframe class="iframebg" src="./html/systemlog.html" width="100%" height="800px" scrolling="no" frameborder="no" border="0"></iframe>-->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table id="table4" data-toggle="table" data-url="./json/datatable.json" data-show-export="true" data-toolbar="#toolbar4" data-checkbox="true" data-show-columns="true" data-search="true" data-data-type="json" data-show-refresh="true" data-show-toggle="true"
+                                    data-show-columns="true" data-sort-name="id" data-page-list="[15, 30, 45, All]" data-page-size="12" data-side-pagination="client" data-pagination="true" data-show-pagination-switch="true">
+                                    <div id="toolbar4" class="toolbar" style="display: inline-block">
+                                        <h3>车辆管理日志</h3>
+                                    </div>
+                                    <thead>
+                                        <tr>
+                                            <!--<th data-field="state" data-checkbox="true" data-width="2%" data-select-item-name="选中"></th>-->
+                                            <th data-field="id" data-align="center" data-width="8%" data-height="10">序号</th>
+                                            <th data-field="carid" data-align="center" data-width="8%" data-height="10">车辆编号</th>
+                                            <th data-field="carid" data-align="center" data-width="10%">车牌号</th>
+                                            <th data-field="maintainCause" data-align="center" data-width="10%">维修原因</th>
+                                            <th data-field="name" data-align="center" data-width="8%">申请人</th>
+                                            <th data-field="id" data-align="center" data-width="15%">申请日期</th>
+                                            <th data-field="operate" data-align="center" data-width="10%" data-events=operateEventsdrive data-formatter=operateFormatterdriver>操作 </th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
                     </div>
 
-                    <!--审批日志-->
+                    <!--驾驶员管理日志-->
                     <div class="tab-pane" id="approveLog">
-                        <iframe class="iframebg" src="./html/approvelog.html" width="100%" height="800px" scrolling="no" frameborder="no" border="0"></iframe>
+                        <!--<iframe class="iframebg" src="./html/approvelog.html" width="100%" height="800px" scrolling="no" frameborder="no" border="0"></iframe>-->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table id="table5" data-toggle="table" data-url="./json/datatable.json" data-show-export="true" data-toolbar="#toolbar5" data-checkbox="true" data-show-columns="true" data-search="true" data-data-type="json" data-show-refresh="true" data-show-toggle="true"
+                                    data-show-columns="true" data-sort-name="id" data-page-list="[15, 30, 45, All]" data-page-size="12" data-side-pagination="client" data-pagination="true" data-show-pagination-switch="true">
+                                    <div id="toolbar5" class="toolbar" style="display: inline-block">
+                                        <h3>驾驶员管理日志</h3>
+                                    </div>
+                                    <thead>
+                                        <tr>
+                                            <!--<th data-field="state" data-checkbox="true" data-width="2%" data-select-item-name="选中"></th>-->
+                                            <th data-field="id" data-align="center" data-width="8%" data-height="10">序号</th>
+                                            <th data-field="carid" data-align="center" data-width="8%" data-height="10">车辆编号</th>
+                                            <th data-field="carid" data-align="center" data-width="10%">车牌号</th>
+                                            <th data-field="maintainCause" data-align="center" data-width="10%">维修原因</th>
+                                            <th data-field="name" data-align="center" data-width="8%">申请人</th>
+                                            <th data-field="id" data-align="center" data-width="15%">申请日期</th>
+                                            <th data-field="operate" data-align="center" data-width="10%" data-events=operateEventsdrive data-formatter=operateFormatterdriver>操作 </th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                     <!--维修日志-->
                     <div class="tab-pane" id="maintainLog">
-                        <iframe class="iframebg" id="iframebg" src="./html/maintainlog.html" width="100%" height="800px" scrolling="no" frameborder="no" border="0"></iframe>
-                        <!--<iframe src="./html/maintainlog.html" width="100%" height="auto"></iframe>-->
+                        <!--<iframe class="iframebg" id="iframebg" src="./html/maintainlog.html" width="100%" height="800px" scrolling="no" frameborder="no" border="0"></iframe>-->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table id="table6" data-toggle="table" data-url="./json/datatable.json" data-show-export="true" data-toolbar="#toolbar6" data-checkbox="true" data-show-columns="true" data-search="true" data-data-type="json" data-show-refresh="true" data-show-toggle="true"
+                                    data-show-columns="true" data-sort-name="id" data-page-list="[15, 30, 45, All]" data-page-size="12" data-side-pagination="client" data-pagination="true" data-show-pagination-switch="true">
+                                    <div id="toolbar6" class="toolbar" style="display: inline-block">
+                                        <h3>维修日志</h3>
+                                    </div>
+                                    <thead>
+                                        <tr>
+                                            <!--<th data-field="state" data-checkbox="true" data-width="2%" data-select-item-name="选中"></th>-->
+                                            <th data-field="id" data-align="center" data-width="8%" data-height="10">序号</th>
+                                            <th data-field="carid" data-align="center" data-width="8%" data-height="10">车辆编号</th>
+                                            <th data-field="carid" data-align="center" data-width="10%">车牌号</th>
+                                            <th data-field="maintainCause" data-align="center" data-width="10%">维修原因</th>
+                                            <th data-field="name" data-align="center" data-width="8%">申请人</th>
+                                            <th data-field="id" data-align="center" data-width="15%">申请日期</th>
+                                            <th data-field="operate" data-align="center" data-width="10%" data-events=operateEventsdrive data-formatter=operateFormatterdriver>操作 </th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
                     </div>
+                    <!--e 日志管理-->
+
                     <!--权限-->
                     <!--权限授予-->
                     <div class="tab-pane" id="rights">
@@ -711,10 +727,16 @@
         // console.log(this);
         // console.log($(this).parent().parent().parent().siblings());
         var sib = $(this).parent().parent().parent().siblings();
+        // console.log(sib);
         for (var i = 0; i < sib.length; i++) {
-            var li2 = sib[i].children[1].children[0];
-            for (var j = 0; j < li2.children.length; j++) {
-                $(li2.children[j]).removeClass("active");
+            // console.log(sib[i]);
+            $(sib[i]).removeClass("active");
+            // console.log(sib[i]);
+            if (sib[i].children[1]) {
+                var li2 = sib[i].children[1].children[0];
+                for (var j = 0; j < li2.children.length; j++) {
+                    $(li2.children[j]).removeClass("active");
+                }
             }
         }
     })

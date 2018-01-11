@@ -9,7 +9,7 @@ $(function() {
 
 function operateFormatterdriver(value, row, index) {
     return [
-        '<button type="button" id="driver_btn_mydel" class="RoleOfA btn btn-default optionBth  btn-sm" style="margin-right:15px;">删除</button>',
+        '<button type="button" id="driver_btn_mydel" class="RoleOfA btn btn-default optionBth  btn-sm" style="margin-right:15px;">授权</button>',
         '<button type="button" id="driver_btn_mytetail" class="RoleOfB btn btn-default optionBth  btn-sm" style="margin-right:15px;">详情</button>'
     ].join('');
 }
