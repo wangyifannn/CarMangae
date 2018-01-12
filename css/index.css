@@ -87,3 +87,57 @@ body {
     display: block;
     /*border: 1px solid red;*/
 }
+
+
+/*搜索*/
+
+.search-map {
+    position: absolute;
+    top: 30px;
+    left: 100px;
+    /*border: 1px solid red;*/
+    height: 38px;
+}
+
+#suggestId {
+    box-sizing: border-box;
+    width: 300px;
+    background: white;
+    border: 0;
+    border-left: 10px solid transparent;
+    border-right: 27px solid transparent;
+    line-height: 20px;
+    font-size: 16px;
+    height: 100%;
+    color: #333;
+    outline: none;
+    border-radius: 2px 0 0 2px;
+    /*margin-top: 20px;*/
+}
+
+.search-btn {
+    box-sizing: border-box;
+    border: 0;
+    width: 70px;
+    height: 100%;
+    font-size: 23px;
+    cursor: pointer;
+    text-align: center;
+    color: white;
+    display: inline-block;
+    background: #1B6DDA;
+    margin-left: -3px;
+    position: absolute;
+    top: 0px;
+    left: 302px;
+}
+
+
+/*位置信息框*/
+
+.point_content {
+    background: #3E3E3E;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
