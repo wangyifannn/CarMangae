@@ -5,7 +5,7 @@
     <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <!--<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
     <!--<link rel="stylesheet" type="text/css" href="./assets/css/font-awesome.min.css" />-->
     <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap-3.3.7.min.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/jquery.mCustomScrollbar.min.css" />
@@ -37,14 +37,6 @@
         .home {
             color: #1B6DDA !important;
             font-weight: bolder;
-        }
-        
-        .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li.active a {
-            color: #1B6DDA;
-        }
-        
-        .li1 a {
-            color: #1B6DDA !important;
         }
     </style>
 </head>
@@ -462,13 +454,14 @@
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">性别</label>
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail3" placeholder="请输入性别">
+                                    <input type="radio" name="sex" value="男">男 &nbsp; &nbsp; &nbsp;
+                                    <input type="radio" name="sex" value="女">女
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">年龄</label>
+                                <label for="inputEmail3" class="col-sm-2 control-label">出生年月</label>
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail3" placeholder="请输入年龄">
+                                    <input type="datetime" class="form-control" id="inputEmail3" placeholder="请输入年龄">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -708,8 +701,8 @@
                     <div class="tab-pane" id="rights">
                         <!--权限授予-->
                         <div class="rightbox">
-                            <h3>权限信息</h3>
                             <form class="form-horizontal">
+                                <h3>权限信息</h3>
                                 <div class="form-group">
                                     <label for="inputEmail3" class="col-sm-2 control-label">名称</label>
                                     <div class="col-sm-10">
@@ -734,69 +727,75 @@
                     </div>
                     <!--角色管理-->
                     <div class="tab-pane" id="role">
-                        <h3>角色管理</h3>
-                        <form class="form-horizontal">
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">名称</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail3" placeholder="">
+                        <div class="rightbox">
+
+                            <form class="form-horizontal">
+                                <h3>角色管理</h3>
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">名称</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="inputEmail3" placeholder="">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">关键字</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail3" placeholder="">
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">关键字</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="inputEmail3" placeholder="">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">描述</label>
-                                <div class="col-sm-10">
-                                    <textarea rows="7" cols="45"></textarea>
-                                    <!--<input type="email" class="form-control" id="inputEmail3" placeholder="请输入车辆编号">-->
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">描述</label>
+                                    <div class="col-sm-10">
+                                        <textarea rows="7" cols="45"></textarea>
+                                        <!--<input type="email" class="form-control" id="inputEmail3" placeholder="请输入车辆编号">-->
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">权限选择</label>
-                                <div class="col-sm-10">
-                                    <input type="checkbox" name="" value="">系统管理员
-                                    <input type="checkbox" name="" value="">车辆管理员
-                                    <input type="checkbox" name="" value="">驾驶员管理员
-                                    <input type="checkbox" name="" value="">驾驶员
-                                    <input type="checkbox" name="" value="">工程师
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">权限选择</label>
+                                    <div class="col-sm-10">
+                                        <input type="checkbox" name="" value="">系统管理员
+                                        <input type="checkbox" name="" value="">车辆管理员
+                                        <input type="checkbox" name="" value="">驾驶员管理员
+                                        <input type="checkbox" name="" value="">驾驶员
+                                        <input type="checkbox" name="" value="">工程师
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                     <div class="tab-pane" id="user">
-                        <h3>用户管理</h3>
-                        <form class="form-horizontal">
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">用户名</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail3" placeholder="">
+                        <div class="rightbox">
+
+                            <form class="form-horizontal">
+                                <h3>用户管理</h3>
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">用户名</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="inputEmail3" placeholder="">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">口令</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail3" placeholder="">
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">口令</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="inputEmail3" placeholder="">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">真实姓名</label>
-                                <div class="col-sm-10">
-                                    <textarea rows="7" cols="45"></textarea>
-                                    <!--<input type="email" class="form-control" id="inputEmail3" placeholder="请输入车辆编号">-->
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">真实姓名</label>
+                                    <div class="col-sm-10">
+                                        <textarea rows="7" cols="45"></textarea>
+                                        <!--<input type="email" class="form-control" id="inputEmail3" placeholder="请输入车辆编号">-->
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">性别</label>
-                                <div class="col-sm-10">
-                                    <input type="radio" name="sex" value="">男
-                                    <input type="radio" name="sex" value="">女
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">性别</label>
+                                    <div class="col-sm-10">
+                                        <input type="radio" name="sex" value="">男
+                                        <input type="radio" name="sex" value="">女
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <!--<div class="content_footer">
