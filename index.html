@@ -5,6 +5,7 @@
     <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <!--<link rel="stylesheet" type="text/css" href="./assets/css/font-awesome.min.css" />-->
     <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap-3.3.7.min.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/jquery.mCustomScrollbar.min.css" />
@@ -41,6 +42,21 @@
         .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li.active a {
             color: #1B6DDA;
         }
+        
+        .li1 a {
+            color: #1B6DDA !important;
+        }
+        
+        .rightbox {
+            width: 500px;
+            margin: 0 auto;
+            border: 1px solid red;
+            margin-top: 100px;
+        }
+        
+        textarea {
+            overflow: auto;
+        }
     </style>
 </head>
 
@@ -67,7 +83,7 @@
                 <div class="sidebar-menu">
                     <ul id="myTab" class="ul_box">
                         <!--主页-->
-                        <li class="active">
+                        <li class="active li1">
                             <a href="#carmap" data-toggle="tab"><i class="glyphicon glyphicon-home"></i>车辆地图
                             </a>
                         </li>
@@ -133,7 +149,8 @@
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li><a href="#rights" data-toggle="tab"><span>权限授予</span></a></li>
-                                    <li><a href="#role" data-toggle="tab"><span>用户角色</span></a></li>
+                                    <li><a href="#role" data-toggle="tab"><span>角色管理</span></a></li>
+                                    <li><a href="#user" data-toggle="tab"><span>用户管理</span></a></li>
                                 </ul>
                             </div>
                         </li>
@@ -155,8 +172,8 @@
                 <div class="content_center" class="tab-content">
                     <!--主界面-->
                     <div class="tab-pane in active" id="carmap">
-                        <!--<iframe class="iframebg" src="../map/guiji3.html" width="100%" height="800px" scrolling="no" frameborder="no" border="0"></iframe>-->
                         <iframe class="iframebg" src="../map/多个点添加信息窗口.html" width="100%" height="800px" scrolling="no" frameborder="no" border="0"></iframe>
+                        <!--<iframe class="iframebg" src="../map/guiji3.html" width="100%" height="800px" scrolling="no" frameborder="no" border="0"></iframe>-->
                     </div>
                     <!--车辆相关-->
                     <!--车辆轨迹-->
@@ -700,11 +717,27 @@
                     <!--权限-->
                     <!--权限授予-->
                     <div class="tab-pane" id="rights">
-                        权限授予
+                        <!--权限授予-->
+                        <div class="rightbox">
+                            <p>权限信息</p>
+                            <div class="form-group">
+                                <span>名称</span><input type="text" name="" value="">
+                            </div>
+                            <div class="form-group">
+                                <span>关键字</span><input type="text" name="" value="">
+                            </div>
+                            <div class="form-group">
+                                <span>描述</span><textarea rows="10" cols="30">我是一个文本框。 
+                                    </textarea>
+                            </div>
+                        </div>
                     </div>
-                    <!--用户角色-->
+                    <!--角色管理-->
                     <div class="tab-pane" id="role">
-                        用户角色
+                        角色管理
+                    </div>
+                    <div class="tab-pane" id="user">
+                        用户管理
                     </div>
                 </div>
                 <!--<div class="content_footer">
@@ -724,20 +757,34 @@
 <script>
     // 解决侧边菜单点击 active失效问题
     $(".sidebar-dropdown ul li").click(function() {
-        // console.log(this);
-        // console.log($(this).parent().parent().parent().siblings());
-        var sib = $(this).parent().parent().parent().siblings();
-        // console.log(sib);
-        for (var i = 0; i < sib.length; i++) {
-            // console.log(sib[i]);
-            $(sib[i]).removeClass("active");
-            // console.log(sib[i]);
-            if (sib[i].children[1]) {
-                var li2 = sib[i].children[1].children[0];
-                for (var j = 0; j < li2.children.length; j++) {
-                    $(li2.children[j]).removeClass("active");
+            // console.log(this);
+            // console.log($(this).parent().parent().parent().siblings());
+            var sib = $(this).parent().parent().parent().siblings();
+            // console.log(sib);
+            for (var i = 0; i < sib.length; i++) {
+                // console.log(sib[i]);
+                $(sib[i]).removeClass("active");
+                // console.log(sib[i]);
+                if (sib[i].children[1]) {
+                    var li2 = sib[i].children[1].children[0];
+                    for (var j = 0; j < li2.children.length; j++) {
+                        $(li2.children[j]).removeClass("active");
+                    }
                 }
             }
+        })
+        // 
+    $(".li1").click(function() {
+        // console.log(this);
+        var sibs = $(this).siblings();
+        for (var i = 0; i < sibs.length; i++) {
+            // console.log($(sibs[i].children[1].children[0]).children());
+            var li2 = $(sibs[i].children[1].children[0]).children();
+            for (var j = 0; j < li2.length; j++) {
+                // console.log(li2[j]);
+                $(li2[j]).removeClass("active");
+            }
+
         }
     })
 
