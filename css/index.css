@@ -135,9 +135,23 @@ body {
 
 /*位置信息框*/
 
+.rightbox {
+    width: 500px;
+    margin: 0 auto;
+    /*border: 1px solid red;*/
+    margin-top: 100px;
+}
+
 .point_content {
     background: #3E3E3E;
     color: white;
     padding: 5px;
     border-radius: 5px;
+}
+
+
+/*权限管理*/
+
+textarea {
+    overflow: auto;
 }
