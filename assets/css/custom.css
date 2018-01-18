@@ -83,11 +83,10 @@
 .sidebar-wrapper .sidebar-brand {
     padding: 15px 20px;
     text-align: center;
-    border-bottom: 1px solid #10151d;
 }
 
 .sidebar-wrapper .sidebar-brand>a {
-    color: #fff;
+    color: #01034A;
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -199,7 +198,7 @@
 
 .sidebar-wrapper .sidebar-menu .sidebar-dropdown>a:after {
     /*content: "\f105";*/
-    content: "》";
+    content: ">";
     font-family: FontAwesome;
     font-weight: 400;
     font-style: normal;
@@ -227,7 +226,10 @@
 
 .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li a:before {
     /*content: "\f10c";*/
-    content: "△";
+    /*content: "→☛♣♣♣";*/
+    /*content: "→";*/
+    /*content: "♣";*/
+    content: "☛";
     font-family: FontAwesome;
     font-weight: 400;
     font-style: normal;
@@ -265,7 +267,7 @@
 .sidebar-wrapper .sidebar-menu .sidebar-dropdown.active>a:after {
     transform: rotate(90deg);
     right: 10px;
-    top: 5px;
+    top: 2px;
 }
 
 

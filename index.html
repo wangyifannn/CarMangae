@@ -5,7 +5,7 @@
     <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <!--<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
     <!--<link rel="stylesheet" type="text/css" href="./assets/css/font-awesome.min.css" />-->
     <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap-3.3.7.min.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/jquery.mCustomScrollbar.min.css" />
@@ -28,6 +28,8 @@
         
         .tab-pane.active {
             display: block;
+            width: 100%;
+            /*border: 4px solid red;*/
         }
         
         .home_link {
@@ -37,6 +39,16 @@
         .home {
             color: #1B6DDA !important;
             font-weight: bolder;
+        }
+        
+        .loading {
+            position: fixed;
+            left: 55%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            text-align: center;
+            color: #1B6DDA;
+            font-size: 2rem;
         }
     </style>
 </head>
@@ -68,7 +80,6 @@
                             <a href="#carmap" data-toggle="tab"><i class="glyphicon glyphicon-home"></i>车辆地图
                             </a>
                         </li>
-
                         <!--车辆管理-->
                         <li class="sidebar-dropdown">
                             <a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>车辆管理</span><span class="badge">4</span>
@@ -151,15 +162,22 @@
             <div class="container-fluid">
                 <!-- 这里放置页面内容-->
                 <div class="content_center" class="tab-content">
+                    <!--主界面路径导航-->
+                    <div class="bread">
+                        <!--<ol class="breadcrumb">
+                            <li><span>当前位置：</span><a href="#">Home</a></li>
+                            <li><a href="#">2013</a></li>
+                            <li class="active">十一月</li>
+                        </ol>-->
+                    </div>
                     <!--主界面-->
                     <div class="tab-pane in active" id="carmap">
                         <iframe class="iframebg" src="./map/carmap.html" width="100%" height="800px" scrolling="no" frameborder="no" border="0"></iframe>
-                        <!--<iframe class="iframebg" src="../map/guiji3.html" width="100%" height="800px" scrolling="no" frameborder="no" border="0"></iframe>-->
                     </div>
                     <!--车辆相关-->
                     <!--车辆轨迹-->
                     <div class="tab-pane" id="carTrack">
-                        <iframe class="iframebg" src="./map/guiji.html" width="100%" height="800px" scrolling="no" frameborder="no" border="0"></iframe>
+                        <iframe class="iframebg" src="./map/cartrack.html" width="100%" height="800px" scrolling="no" frameborder="no" border="0"></iframe>
                     </div>
                     <div class="tab-pane" id="carList">
                         <div class="panel-body">
@@ -617,7 +635,6 @@
                     <!--s 日志管理-->
                     <!--车辆管理日志-->
                     <div class="tab-pane" id="systemLog">
-                        <!--<iframe class="iframebg" src="./html/systemlog.html" width="100%" height="800px" scrolling="no" frameborder="no" border="0"></iframe>-->
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table id="table4" data-toggle="table" data-url="./json/datatable.json" data-show-export="true" data-toolbar="#toolbar4" data-checkbox="true" data-show-columns="true" data-search="true" data-data-type="json" data-show-refresh="true" data-show-toggle="true"
@@ -644,7 +661,6 @@
 
                     <!--驾驶员管理日志-->
                     <div class="tab-pane" id="approveLog">
-                        <!--<iframe class="iframebg" src="./html/approvelog.html" width="100%" height="800px" scrolling="no" frameborder="no" border="0"></iframe>-->
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table id="table5" data-toggle="table" data-url="./json/datatable.json" data-show-export="true" data-toolbar="#toolbar5" data-checkbox="true" data-show-columns="true" data-search="true" data-data-type="json" data-show-refresh="true" data-show-toggle="true"
@@ -670,7 +686,6 @@
                     </div>
                     <!--维修日志-->
                     <div class="tab-pane" id="maintainLog">
-                        <!--<iframe class="iframebg" id="iframebg" src="./html/maintainlog.html" width="100%" height="800px" scrolling="no" frameborder="no" border="0"></iframe>-->
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table id="table6" data-toggle="table" data-url="./json/datatable.json" data-show-export="true" data-toolbar="#toolbar6" data-checkbox="true" data-show-columns="true" data-search="true" data-data-type="json" data-show-refresh="true" data-show-toggle="true"
@@ -803,6 +818,11 @@
             </div>
         </main>
         <!-- page-content" -->
+        <!--start 图片懒加载-->
+        <div class="loading">
+            <p>loading……</p>
+        </div>
+        <!--end 图片懒加载-->
     </div>
     <!-- page-wrapper -->
 </body>
@@ -813,10 +833,37 @@
 
 <script type="text/javascript" src="https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.js"></script>
 <script>
+    // s 页面懒加载
+    document.onreadystatechange = loadingChange; //当页面加载状态改变的时候执行这个方法.  
+    function loadingChange() {
+        if (document.readyState == "complete") { //当页面加载状态为完全结束时进入   
+            $(".loading").hide(); //当页面加载完成后将loading页隐藏  
+        }
+    }
+    // e 页面懒加载
     // 解决侧边菜单点击 active失效问题
+
+    // 面包屑导航
+    var breadHtml = "";
+    var breadli1 = "车辆管理系统";
+    var breadli2 = "车辆地图";
+    var breadli3 = "";
+
+    function changBread(bread1, bread2, bread3) {
+        breadHtml = "  <ol class='breadcrumb'> <li><span>当前位置:</span><a href='./index.html'>" + bread1 + "</a> </li><li> <a href = '#''>" +
+            bread2 + " </a></li><li class = 'active'> " + bread3 + "</li> </ol>";
+        $(".bread").html(breadHtml);
+    }
+    changBread(breadli1, breadli2, breadli3);
+
+    // 点击选中切换页面并改变面包屑导航路径
     $(".sidebar-dropdown ul li").click(function() {
-            // console.log(this);
-            // console.log($(this).parent().parent().parent().siblings());
+            // console.log(this.parentNode.parentNode.parentNode.children[0].children[1].innerText);
+            // console.log(this.innerText);
+            changBread(breadli1, this.parentNode.parentNode.parentNode.children[0].children[1].innerText, this.innerText);
+            // console.log($(this));
+            // console.log($(this).children());
+            // console.log($($(this).children[1]).textContent);
             var sib = $(this).parent().parent().parent().siblings();
             // console.log(sib);
             for (var i = 0; i < sib.length; i++) {
