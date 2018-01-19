@@ -1,7 +1,7 @@
         /*系统整体颜色变化*/
         
         body {
-            background: #494A5F;
+            background: #F5F5F5;
             /*background: #BEBFD6;*/
         }
         
@@ -85,7 +85,8 @@
         .breadcrumb span {
             padding-left: 40px;
             margin-left: -12px;
-            color: #535353;
+            /*color: #535353;*/
+            color: #01034A;
             border-left: 1px solid #DBDBDB;
         }
         /*end 路径导航*/
@@ -175,7 +176,9 @@
         #btn_mydel,
         .optionBth {
             border: none;
-            background: #047AF7;
+            color: white;
+            border-radius: 10px;
+            background: #010B52;
         }
         
         .page-content::after {

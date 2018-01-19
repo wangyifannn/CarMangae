@@ -1,9 +1,5 @@
 /*表格样式*/
 
-* {
-    /*border: 1px solid red;*/
-}
-
 .table-responsive {
     padding-top: 50px;
 }
@@ -11,11 +7,6 @@
 table {
     border: 2px solid #C7C7C7;
     /*border: 2px solid red;*/
-    /*z-index: 33;*/
-}
-
-.fixed-table-body {
-    color: white;
 }
 
 .keep-open .dropdown-menu {
@@ -29,7 +20,7 @@ table {
 
 .table-hover>tbody>tr:hover {
     /*background-color: #337AB7;*/
-    background-color: #494A5F;
+    background-color: #DBDBDB;
     cursor: pointer;
 }
 
@@ -77,6 +68,12 @@ table {
     border: 2px solid #C7C7C7;
 }
 
+.fixed-table-container thead tr {
+    background: #DBDBDB;
+    border-bottom: 3px solid #C7C7C7;
+    /*border: 2px solid #C7C7C7;*/
+}
+
 .fixed-table-container thead th {
     /*border: 1px solid blue;*/
     border: 2px solid #C7C7C7;
@@ -94,17 +91,18 @@ table {
 .pagination>.active>span,
 .pagination>.active>span:focus,
 .pagination>.active>span:hover {
-    background: #1471EE;
+    /*background: #1471EE;*/
+    background: #BBA7DA;
 }
 
 .table-responsive h3 {
-    color: #1471EE;
+    /*color: #1471EE;*/
     margin-top: -2px;
 }
 
 .pagination-info,
 .page-list {
-    color: white;
+    color: black;
 }
 
 .form-control {
