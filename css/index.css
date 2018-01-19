@@ -88,6 +88,36 @@
             color: #535353;
             border-left: 1px solid #DBDBDB;
         }
+        /*end 路径导航*/
+        
+        .tab-pane {
+            display: none;
+        }
+        
+        .tab-pane.active {
+            display: block;
+            width: 100%;
+            /*border: 4px solid red;*/
+        }
+        
+        .home_link {
+            float: right;
+        }
+        
+        .home {
+            color: #1B6DDA !important;
+            font-weight: bolder;
+        }
+        
+        .loading {
+            position: fixed;
+            left: 55%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            text-align: center;
+            color: #1B6DDA;
+            font-size: 2rem;
+        }
         
         .content_header {
             text-align: center;
