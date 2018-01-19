@@ -5,7 +5,7 @@
     <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <!--<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
     <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap-3.3.7.min.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/jquery.mCustomScrollbar.min.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
@@ -19,10 +19,7 @@
     <script src="assets/js//jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="./js/cartable.js"></script>
     <script src="./js/drivertable.js"></script>
-
-    <style>
-
-    </style>
+    <script src="./assets/js/laydate.js"></script>
 </head>
 
 <body>
@@ -187,61 +184,55 @@
                             <form class="form-horizontal">
                                 <h3>汽车录入表</h3>
                                 <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">车牌号</label>
-                                    <div class="col-sm-10">
+                                    <label for="inputEmail3" class="col-sm-4 control-label">车辆牌号</label>
+                                    <div class="col-sm-7">
                                         <input type="email" class="form-control" id="inputEmail3" placeholder="请输入车牌号">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">原车牌号</label>
-                                    <div class="col-sm-10">
+                                    <label for="inputEmail3" class="col-sm-4 control-label">原车牌号</label>
+                                    <div class="col-sm-7">
                                         <input type="email" class="form-control" id="inputEmail3" placeholder="请输入原始车牌号">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">颜色</label>
-                                    <div class="col-sm-10">
+                                    <label for="inputEmail3" class="col-sm-4 control-label">车辆颜色</label>
+                                    <div class="col-sm-7">
                                         <input type="email" class="form-control" id="inputEmail3" placeholder="颜色">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">品牌</label>
-                                    <div class="col-sm-10">
+                                    <label for="inputEmail3" class="col-sm-4 control-label">车辆品牌</label>
+                                    <div class="col-sm-7">
                                         <input type="email" class="form-control" id="inputEmail3" placeholder="品牌">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">购买日期</label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="inputEmail3" placeholder="购买日期">
+                                    <label for="inputEmail3" class="col-sm-4 control-label">购买日期</label>
+                                    <div class="col-sm-7">
+                                        <input class="date_input form-control" onClick="laydate()">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">购买价格</label>
-                                    <div class="col-sm-10">
+                                    <label for="inputEmail3" class="col-sm-4 control-label">购买价格</label>
+                                    <div class="col-sm-7">
                                         <input type="email" class="form-control" id="inputEmail3" placeholder="购买价格">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">车辆类型</label>
-                                    <div class="col-sm-10">
+                                    <label for="inputEmail3" class="col-sm-4 control-label">车辆类型</label>
+                                    <div class="col-sm-7">
                                         <input type="email" class="form-control" id="inputEmail3" placeholder="车辆类型">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">备注</label>
-                                    <div class="col-sm-10">
+                                    <label for="inputEmail3" class="col-sm-4 control-label">备注信息</label>
+                                    <div class="col-sm-7">
                                         <input type="email" class="form-control" id="inputEmail3" placeholder="其他信息">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-                                    <div class="col-sm-10">
-                                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
+                                    <div class="col-sm-offset-4 col-sm-7">
                                         <div class="checkbox">
                                             <label>
                                         <input type="checkbox">同意相关条例
@@ -250,7 +241,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
+                                    <div class="col-sm-offset-4 col-sm-7">
                                         <button type="submit" class="btn btn-default">提交</button>
                                     </div>
                                 </div>
@@ -336,55 +327,55 @@
                             <form class="form-horizontal">
                                 <h3>申请用车表</h3>
                                 <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">车牌号</label>
+                                    <label for="inputEmail3" class="col-sm-3 control-label">车牌号</label>
                                     <div class="col-sm-10">
                                         <input type="email" class="form-control" id="inputEmail3" placeholder="请输入车牌号">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">原车牌号</label>
+                                    <label for="inputEmail3" class="col-sm-3 control-label">原车牌号</label>
                                     <div class="col-sm-10">
                                         <input type="email" class="form-control" id="inputEmail3" placeholder="请输入原始车牌号">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">颜色</label>
+                                    <label for="inputEmail3" class="col-sm-3 control-label">颜色</label>
                                     <div class="col-sm-10">
                                         <input type="email" class="form-control" id="inputEmail3" placeholder="颜色">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">品牌</label>
+                                    <label for="inputEmail3" class="col-sm-3 control-label">品牌</label>
                                     <div class="col-sm-10">
                                         <input type="email" class="form-control" id="inputEmail3" placeholder="品牌">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">购买日期</label>
+                                    <label for="inputEmail3" class="col-sm-3 control-label">购买日期</label>
                                     <div class="col-sm-10">
                                         <input type="email" class="form-control" id="inputEmail3" placeholder="购买日期">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">购买价格</label>
+                                    <label for="inputEmail3" class="col-sm-3 control-label">购买价格</label>
                                     <div class="col-sm-10">
                                         <input type="email" class="form-control" id="inputEmail3" placeholder="购买价格">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">车辆类型</label>
+                                    <label for="inputEmail3" class="col-sm-3 control-label">车辆类型</label>
                                     <div class="col-sm-10">
                                         <input type="email" class="form-control" id="inputEmail3" placeholder="车辆类型">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">备注</label>
+                                    <label for="inputEmail3" class="col-sm-3 control-label">备注</label>
                                     <div class="col-sm-10">
                                         <input type="email" class="form-control" id="inputEmail3" placeholder="其他信息">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                                    <label for="inputPassword3" class="col-sm-3 control-label">Password</label>
                                     <div class="col-sm-10">
                                         <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
                                     </div>
@@ -443,7 +434,7 @@
                             <form class="form-horizontal">
                                 <h3>驾驶员录入表</h3>
                                 <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">姓名</label>
+                                    <label for="inputEmail3" class="col-sm-3 control-label">姓名</label>
                                     <div class="col-sm-10">
                                         <input type="email" class="form-control" id="inputEmail3" placeholder="请输入驾驶员姓名">
                                     </div>
