@@ -75,6 +75,13 @@
             top: 0px;
             left: 302px;
         }
+        
+        .search-btn img {
+            width: 25px;
+            /*border: 1px solid red;*/
+            height: 25px;
+            margin-top: 7px;
+        }
         /*位置信息框*/
         
         .point_content {
@@ -115,9 +122,9 @@
     </div>
     <div id="r-result" class="search-map">
         <input type="text" id="suggestId" placeholder="请输入搜索车辆编号" />
-        <span class="search-btn" id="search-btn"> 
+        <div class="search-btn" id="search-btn">
             <img src="../img/map/search.png" alt="">
-            </span>
+        </div>
     </div>
 </body>
 
@@ -178,12 +185,12 @@
         marker.addEventListener("click", function(e) {
             openInfo(content, e);
             // top值
-            var BMapPop = document.getElementsByClassName("BMap_pop")[0];
-            console.log(BMapPop.style.getPropertyValue(top));
-            console.log($(".BMap_pop").css("top"));
-            $(".BMap_pop").css({
-                "top": $(".BMap_pop").css("top") - 10
-            })
+            // var BMapPop = document.getElementsByClassName("BMap_pop")[0];
+            // console.log(BMapPop.style.getPropertyValue(top));
+            // console.log($(".BMap_pop").css("top"));
+            // $(".BMap_pop").css({
+            //     "top": $(".BMap_pop").css("top") - 10
+            // })
 
         });
     }

@@ -9,6 +9,13 @@
     transition: all 0.3s;
 }
 
+.sidebar_nav_img {
+    width: 128px;
+    height: 27px;
+    margin-left: 25px;
+    margin-top: -10px;
+}
+
 
 /*----------------page-wrapper----------------*/
 
@@ -169,7 +176,8 @@
 .sidebar-wrapper .sidebar-menu ul li a {
     display: inline-block;
     width: 100%;
-    color: #9c9c9c;
+    /*color: #9c9c9c;*/
+    color: white;
     text-decoration: none;
     transition: color .3s;
     position: relative;

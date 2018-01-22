@@ -5,6 +5,12 @@
             /*background: #BEBFD6;*/
         }
         
+        .clear_float::after {
+            content: '';
+            clear: both;
+            display: block;
+        }
+        
         .sidebar-wrapper {
             background: #010626;
         }
@@ -49,17 +55,18 @@
         }
         
         .li1 a {
-            /*color: #1B6DDA !important;*/
-            color: #BBA7DA !important;
+            color: #1B6DDA !important;
+            /*color: #BBA7DA !important;*/
         }
         
         .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li.active a {
-            color: #BBA7DA;
+            /*color: #BBA7DA;*/
+            color: #1B6DDA;
         }
         
         .sidebar-brand {
             background-color: #F5F5F5;
-            border-bottom: 4px solid #DBDBDB;
+            border-bottom: 4px solid #1A1D3E;
             /*border-right: 1px solid #DBDBDB;*/
             /*background-color: #DBDBDB;*/
         }
@@ -73,12 +80,16 @@
         /*end 颜色变化*/
         /*路径导航*/
         
+        .bread {
+            width: 100%;
+            border-bottom: 4px solid #DBDBDB;
+        }
+        
         .breadcrumb {
             padding: 15px;
-            background-color: #F5F5F5;
+            /*background-color: #F5F5F5;*/
             /*background-color: #DBDBDB;*/
             margin: 0px;
-            border-bottom: 4px solid #DBDBDB;
             border-radius: 0px;
         }
         
@@ -89,6 +100,24 @@
             color: #01034A;
             border-left: 1px solid #DBDBDB;
         }
+        
+        .bread_right {
+            /*border: 1px solid red;*/
+            line-height: 30px;
+            margin-right: 30px;
+            margin-top: 11px;
+        }
+        
+        .bread_right i {
+            cursor: pointer;
+        }
+        /*.bread_left {
+            float: left;
+        }
+        
+        .bread_right {
+            float: right;
+        }*/
         /*end 路径导航*/
         
         .tab-pane {
@@ -164,13 +193,12 @@
             background: transparent;
             /*color: #A1A2A4;*/
         }
-        
-        #carTypeIn h3,
+        /*#carTypeIn h3,
         #paizhao h3,
         #driverTypeIn h3,
         .tableTypein h3 {
-            color: #047AF7;
-        }
+            color: #666;
+        }*/
         
         #btn_mytetail,
         #btn_mydel,
