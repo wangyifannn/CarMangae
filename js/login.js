@@ -12,24 +12,21 @@ $(document).ready(function() {
     var flag = false;
     // 点击登录按钮进行判断
     $(".login_btn").click(function() {
-        console.log($(".vercode_input").val());
-        $.ajax({
-            url: "http://192.168.2.228:8080/car-management/user/login.action",
-            type: "get",
-            data: {
-                username: $(".user_input").val(),
-                password: $(".pass_input").val(),
-                verifyCode: $(".vercode_input").val()
-            },
-            dataType: "jsonp", //数据类型为jsonp  
-            jsonp: "jsonpCallback", //服务端用于接收callback调用的function名的参数  
-            success: function(data) {
-                var date = JSON.stringify(data);
-                console.log(date);
-            }
-        })
+        // $.ajax({
+        //     url: "http://192.168.2.228:8080/car-management/user/login.action",
+        //     type: "get",
+        //     data: {
+        //         username: $(".user_input").val(),
+        //         password: $(".pass_input").val(),
+        //         verifyCode: $(".vercode_input").val()
+        //     },
+        //     dataType: "jsonp", //数据类型为jsonp  
+        //     jsonp: "jsonpCallback", //服务端用于接收callback调用的function名的参数  
+        //     success: function(data) {
+        //         var date = JSON.stringify(data);
+        //         console.log(date);
+        window.location.href = "../index.html";
+        //     }
+        // })
     })
 })
-
-// var ss = { "ret": true, "msg": "登录成功", "data": null };
-// console.log(ss);

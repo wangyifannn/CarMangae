@@ -195,4 +195,19 @@
      height: 21px;
      cursor: pointer;
  }
+ 
+ .controlRight button {
+     background: #0A8CFF;
+     border: none;
+     width: 65px;
+     height: 30px;
+     line-height: 30px;
+     color: white;
+     border-radius: 5px;
+     margin-left: 262px;
+     margin-top: 20px;
+     outline: none;
+     cursor: pointer;
+     font-size: 10px;
+ }
  /*end 控件框结束*/
