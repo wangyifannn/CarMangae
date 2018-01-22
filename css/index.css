@@ -59,6 +59,11 @@
             /*color: #BBA7DA !important;*/
         }
         
+        .breadcrumb li.active {
+            color: #1B6DDA;
+            /*color: #BBA7DA !important;*/
+        }
+        
         .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li.active a {
             /*color: #BBA7DA;*/
             color: #1B6DDA;
@@ -286,3 +291,17 @@
         textarea {
             overflow: auto;
         }
+        /*數據採集*/
+        
+        .longDataBox {
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+        /*.longDataContent table {
+            border: 1px solid red;
+        }
+        
+        .longDataContent table tr td {
+            borde: 1px solid red !important;
+        }*/

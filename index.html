@@ -86,21 +86,24 @@
                         </li>
                         <!--数据管理-->
                         <li class="sidebar-dropdown">
-                            <a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>数据管理</span><span class="badge">2</span></a>
+                            <a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>数据管理</span><span class="badge">4</span></a>
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li><a href="#currentData" data-toggle="tab"><span>实时数据</span></a></li>
                                     <li><a href="#beforeData" data-toggle="tab"><span>历史数据</span></a></li>
+                                    <li><a href="#longData" data-toggle="tab"><span>远程采集控制</span></a></li>
+                                    <li><a href="#longECU" data-toggle="tab"><span>远程ECU刷写</span></a></li>
                                 </ul>
                             </div>
                         </li>
                         <!--日志管理-->
                         <li class="sidebar-dropdown">
-                            <a href="#"><i class="glyphicon glyphicon-oil"></i><span>日志管理</span><span class="badge">3</span></a>
+                            <a href="#"><i class="glyphicon glyphicon-oil"></i><span>日志管理</span><span class="badge">4</span></a>
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li><a href="#maintainLog" data-toggle="tab"><span>维修日志</span></a></li>
-                                    <li><a href="#systemLog" data-toggle="tab"><span>车辆管理日志</span></a></li>
+                                    <li><a href="#systemLog" data-toggle="tab"><span>系统日志</span></a></li>
+                                    <li><a href="#manageLog" data-toggle="tab"><span>车辆管理日志</span></a></li>
                                     <li><a href="#approveLog" data-toggle="tab"><span>驾驶员管理日志</span></a></li>
                                 </ul>
                             </div>
@@ -630,11 +633,10 @@
                                     <thead>
                                         <tr>
                                             <th data-field="id" data-align="center" data-width="8%" data-height="10">序号</th>
-                                            <th data-field="carid" data-align="center" data-width="8%" data-height="10">车辆编号</th>
-                                            <th data-field="carid" data-align="center" data-width="10%">车牌号</th>
-                                            <th data-field="maintainCause" data-align="center" data-width="10%">维修原因</th>
+                                            <th data-field="carid" data-align="center" data-width="8%" data-height="10">脚本类型</th>
+                                            <th data-field="carid" data-align="center" data-width="10%">采集时间</th>
+                                            <th data-field="maintainCause" data-align="center" data-width="10%">变量</th>
                                             <th data-field="name" data-align="center" data-width="8%">申请人</th>
-                                            <th data-field="id" data-align="center" data-width="15%">申请日期</th>
                                             <th data-field="operate" data-align="center" data-width="10%" data-events=operateEventsdrive data-formatter=operateFormatterdriver>操作 </th>
                                         </tr>
                                     </thead>
@@ -642,17 +644,62 @@
                             </div>
                         </div>
                     </div>
+                    <!--远程数据采集-->
+                    <div class="tab-pane" id="longData">
+                        <div class="panel-body">
+                            <div class="longDataTop clear_float">
+                                <div class="pull-left">
+                                    <button class="btn btn-primary">dbc脚本下放</button>
+                                    <button class="btn btn-primary">a2l脚本下放</button>
+                                </div>
+                                <div class="pull-right">
+                                    <input type="text" placeholder="请输入车辆编号">
+                                    <button class="btn btn-primary">开始采集</button>
+                                    <button class="btn btn-primary">停止采集</button>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table id="tablelongdata" data-toggle="table" data-url="./json/datatable.json" data-show-export="false" data-toolbar="#tablelongdata" data-checkbox="true" data-show-columns="false" data-search="false" data-data-type="json" data-show-refresh="false" data-show-toggle="false"
+                                    data-show-columns="false" data-sort-name="id" data-page-list="[15, 30, 45, All]" data-page-size="12" data-side-pagination="client" data-pagination="false" data-show-pagination-switch="false">
+                                    <div id="tablelongdata1" class="toolbar" style="display: inline-block">
+                                        <!--<h3>数据</h3>-->
+                                    </div>
+                                    <thead>
+                                        <tr>
+                                            <th data-field="id" data-align="center" data-width="8%" data-height="10">序号</th>
+                                            <th data-field="carid" data-align="center" data-width="8%" data-height="10">车辆编号</th>
+                                            <th data-field="carid" data-align="center" data-width="10%">文件名</th>
+                                            <th data-field="maintainCause" data-align="center" data-width="10%">文件类型</th>
+                                            <th data-field="maintainCause" data-align="center" data-width="8%">文件开始时间</th>
+                                            <th data-field="maintainCause" data-align="center" data-width="8%">文件结束时间</th>
+                                            <th data-field="name" data-align="center" data-width="8%">创建时间</th>
+                                            <th data-field="operate" data-align="center" data-width="10%" data-events=operateEventsdrive data-formatter=operateFormatterdriver>操作 </th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!--远程ecu刷新-->
+                    <div class="tab-pane" id="longECU">
+                        <div class="panel-body">
+                            <div class="longDataTop">
+                                <button>下载标定文件</button>
+                                <button>开始自动刷写</button>
+                            </div>
+                        </div>
+                    </div>
                     <!--e 数据管理-->
 
                     <!--s 日志管理-->
-                    <!--车辆管理日志-->
+                    <!--系统日志-->
                     <div class="tab-pane" id="systemLog">
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table id="table6" data-toggle="table" data-url="./json/datatable.json" data-show-export="true" data-toolbar="#toolbar6" data-checkbox="true" data-show-columns="true" data-search="true" data-data-type="json" data-show-refresh="true" data-show-toggle="true"
                                     data-show-columns="true" data-sort-name="id" data-page-list="[15, 30, 45, All]" data-page-size="12" data-side-pagination="client" data-pagination="true" data-show-pagination-switch="true">
                                     <div id="toolbar6" class="toolbar" style="display: inline-block">
-                                        <h3>车辆管理日志</h3>
+                                        <h3>系统日志</h3>
                                     </div>
                                     <thead>
                                         <tr>
@@ -714,6 +761,31 @@
                                             <th data-field="maintainCause" data-align="center" data-width="10%">维修原因</th>
                                             <th data-field="name" data-align="center" data-width="8%">申请人</th>
                                             <th data-field="id" data-align="center" data-width="15%">申请日期</th>
+                                            <th data-field="operate" data-align="center" data-width="10%" data-events=operateEventsdrive data-formatter=operateFormatterdriver>操作 </th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!--管理日志-->
+                    <div class="tab-pane" id="manageLog">
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table id="table9" data-toggle="table" data-url="./json/datatable.json" data-show-export="true" data-toolbar="#toolbar9" data-checkbox="true" data-show-columns="true" data-search="true" data-data-type="json" data-show-refresh="true" data-show-toggle="true"
+                                    data-show-columns="true" data-sort-name="id" data-page-list="[15, 30, 45, All]" data-page-size="12" data-side-pagination="client" data-pagination="true" data-show-pagination-switch="true">
+                                    <div id="toolbar9" class="toolbar" style="display: inline-block">
+                                        <h3>车辆管理日志</h3>
+                                    </div>
+                                    <thead>
+                                        <tr>
+                                            <!--<th data-field="state" data-checkbox="true" data-width="2%" data-select-item-name="选中"></th>-->
+                                            <th data-field="id" data-align="center" data-width="8%" data-height="10">序号</th>
+                                            <th data-field="carid" data-align="center" data-width="8%" data-height="10">车辆编号</th>
+                                            <th data-field="carid" data-align="center" data-width="10%">车牌号</th>
+                                            <th data-field="maintainCause" data-align="center" data-width="10%">操作类型</th>
+                                            <th data-field="name" data-align="center" data-width="8%">操作人</th>
+                                            <th data-field="id" data-align="center" data-width="15%">日期</th>
                                             <th data-field="operate" data-align="center" data-width="10%" data-events=operateEventsdrive data-formatter=operateFormatterdriver>操作 </th>
                                         </tr>
                                     </thead>
