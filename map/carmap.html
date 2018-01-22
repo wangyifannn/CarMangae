@@ -78,10 +78,6 @@
         /*位置信息框*/
         
         .point_content {
-            /*background: #3E3E3E;*/
-            /*color: white;*/
-            /*padding: -30px;*/
-            /*border: 1px solid red;*/
             border-radius: 5px;
             /*width: 200px;*/
             /*height: 100px;*/
@@ -90,6 +86,17 @@
         .point_content p {
             font-size: 12px;
             line-height: 7px;
+        }
+        /*信息框样式*/
+        
+        .BMap_simple_bubble_pop {
+            border-radius: 10px;
+        }
+        
+        .BMap_pop {
+            /*top: 90px !important;*/
+            /*border: 11px solid red;*/
+            /*border-radius: 10px;*/
         }
     </style>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=qIVEmOSVWxsby5OEWwm6UIbEfHKEDcZz"></script>
@@ -102,7 +109,7 @@
 
 <body>
     <div id="allmap"></div>
-    <p>点击标注点，可查看由纯文本构成的简单型信息窗口</p>
+    <!--<p>点击标注点，可查看由纯文本构成的简单型信息窗口</p>-->
     <div class="map_title">
         全国主要城市车辆数量
     </div>
@@ -143,9 +150,8 @@
     var myIcon = new BMap.Icon("../img/map/30redcar.png", new BMap.Size(30, 57));
 
     var opts = {
-        width: 250, // 信息窗口宽度
-        height: 120, // 信息窗口高度
-        // title: "信息窗口", // 信息窗口标题
+        width: 80, // 信息窗口宽度
+        height: 100, // 信息窗口高度
         // title: sContent,
         enableMessage: true //设置允许信息窗发送短息
     };
@@ -158,11 +164,7 @@
         var carid = data_info[i][3]; //点击标注点显示提示框信息
         var drivername = data_info[i][4]; //点击标注点显示提示框信息
         var showInfo = "<div class='point_content'>地址：" + Addresss + "<br/>" + "车辆编号:" + carid + "<br/>驾驶员：" + drivername + "<br/>车牌号:" + 1 + "</div>";
-
-        // markers.push(marker);
         markers.push(marker);
-        // map.addOverlay(marker); // 将标注添加到地图中
-
         addClickHandler(showInfo, marker);
         // console.log(showInfo);
     }
@@ -175,7 +177,13 @@
     function addClickHandler(content, marker) {
         marker.addEventListener("click", function(e) {
             openInfo(content, e);
-            // infoBox.open(marker);
+            // top值
+            var BMapPop = document.getElementsByClassName("BMap_pop")[0];
+            console.log(BMapPop.style.getPropertyValue(top));
+            console.log($(".BMap_pop").css("top"));
+            $(".BMap_pop").css({
+                "top": $(".BMap_pop").css("top") - 10
+            })
 
         });
     }
