@@ -187,6 +187,10 @@
                     <div class="tab-pane tableTypein" id="carTypeIn">
                         <div class="rightbox">
                             <!--车辆录入-->
+                            <img class="table_footer" src="./img/index/table_footer.png" alt="">
+                            <img class="table_header" src="./img/index/table_header.png" alt="">
+                            <!--<img class="table_footer" src="./img/index/table_footer.png" alt="">-->
+
                             <form class="form-horizontal">
                                 <h3>汽车录入表</h3>
                                 <div class="form-group">
@@ -254,76 +258,11 @@
                             </form>
                         </div>
                     </div>
-                    <div class="tab-pane tableTypein" id="paizhao">
-                        <div class="rightbox">
-                            <!--<p>用于车辆临时牌照有效期限以及保险的有效期限管理，牌照和保险两者的有效日期一旦进入用户设定的最后时间节点，即可在系统后台自动提醒管理人员及时更换牌照和续保。</p>-->
-                            <!--保险录入表-->
-                            <!--车辆录入-->
-                            <form class="form-horizontal">
-                                <h3>保险录入表</h3>
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">车牌号</label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="inputEmail3" placeholder="请输入车牌号">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">保险公司</label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="inputEmail3" placeholder="请输入原始车牌号">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">保险金额</label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="inputEmail3" placeholder="颜色">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">保险日起</label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="inputEmail3" placeholder="品牌">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">保险类型</label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="inputEmail3" placeholder="购买价格">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">保险日止</label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="inputEmail3" placeholder="购买日期">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">备注</label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="inputEmail3" placeholder="其他信息">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                        <div class="checkbox">
-                                            <label>
-                                        <input type="checkbox">同意相关条例
-                                        </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" class="btn btn-default btn-primary">提交</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
                     <!--申请用车表-->
                     <div class="tab-pane tableTypein" id="approveCar">
                         <div class="rightbox">
+                            <img class="table_footer" src="./img/index/table_footer.png" alt="">
+                            <img class="table_header" src="./img/index/table_header.png" alt="">
                             <form class="form-horizontal">
                                 <h3>申请用车表</h3>
                                 <div class="form-group">
@@ -425,6 +364,8 @@
                     <!--驾驶员录入-->
                     <div class="tab-pane tableTypein" id="driverTypeIn">
                         <div class="rightbox">
+                            <img class="table_footer" src="./img/index/table_footer.png" alt="">
+                            <img class="table_header" src="./img/index/table_header.png" alt="">
                             <form class="form-horizontal">
                                 <h3>驾驶员录入表</h3>
                                 <div class="form-group">
@@ -531,7 +472,8 @@
                     <!--维修申请-->
                     <div class="tab-pane tableTypein" id="maintainTypeIn">
                         <div class="rightbox">
-
+                            <img class="table_footer" src="./img/index/table_footer.png" alt="">
+                            <img class="table_header" src="./img/index/table_header.png" alt="">
                             <form class="form-horizontal">
                                 <h3>维修申请表</h3>
                                 <div class="form-group">
@@ -658,26 +600,6 @@
                                     <button class="btn btn-primary">停止采集</button>
                                 </div>
                             </div>
-                            <div class="table-responsive">
-                                <table id="tablelongdata" data-toggle="table" data-url="./json/datatable.json" data-show-export="false" data-toolbar="#tablelongdata" data-checkbox="true" data-show-columns="false" data-search="false" data-data-type="json" data-show-refresh="false" data-show-toggle="false"
-                                    data-show-columns="false" data-sort-name="id" data-page-list="[15, 30, 45, All]" data-page-size="12" data-side-pagination="client" data-pagination="false" data-show-pagination-switch="false">
-                                    <div id="tablelongdata1" class="toolbar" style="display: inline-block">
-                                        <!--<h3>数据</h3>-->
-                                    </div>
-                                    <thead>
-                                        <tr>
-                                            <th data-field="id" data-align="center" data-width="8%" data-height="10">序号</th>
-                                            <th data-field="carid" data-align="center" data-width="8%" data-height="10">车辆编号</th>
-                                            <th data-field="carid" data-align="center" data-width="10%">文件名</th>
-                                            <th data-field="maintainCause" data-align="center" data-width="10%">文件类型</th>
-                                            <th data-field="maintainCause" data-align="center" data-width="8%">文件开始时间</th>
-                                            <th data-field="maintainCause" data-align="center" data-width="8%">文件结束时间</th>
-                                            <th data-field="name" data-align="center" data-width="8%">创建时间</th>
-                                            <th data-field="operate" data-align="center" data-width="10%" data-events=operateEventsdrive data-formatter=operateFormatterdriver>操作 </th>
-                                        </tr>
-                                    </thead>
-                                </table>
-                            </div>
                         </div>
                     </div>
                     <!--远程ecu刷新-->
@@ -800,6 +722,8 @@
                     <div class="tab-pane" id="rights">
                         <!--权限授予-->
                         <div class="rightbox">
+                            <img class="table_footer" src="./img/index/table_footer.png" alt="">
+                            <img class="table_header" src="./img/index/table_header.png" alt="">
                             <form class="form-horizontal">
                                 <h3>权限信息</h3>
                                 <div class="form-group">
@@ -827,7 +751,8 @@
                     <!--角色管理-->
                     <div class="tab-pane" id="role">
                         <div class="rightbox">
-
+                            <img class="table_footer" src="./img/index/table_footer.png" alt="">
+                            <img class="table_header" src="./img/index/table_header.png" alt="">
                             <form class="form-horizontal">
                                 <h3>角色管理</h3>
                                 <div class="form-group">
@@ -864,7 +789,8 @@
                     </div>
                     <div class="tab-pane" id="user">
                         <div class="rightbox">
-
+                            <img class="table_footer" src="./img/index/table_footer.png" alt="">
+                            <img class="table_header" src="./img/index/table_header.png" alt="">
                             <form class="form-horizontal">
                                 <h3>用户管理</h3>
                                 <div class="form-group">

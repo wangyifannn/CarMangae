@@ -111,12 +111,11 @@
     <script type="text/javascript" src="http://api.map.baidu.com/library/TextIconOverlay/1.2/src/TextIconOverlay_min.js"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/library/MarkerClusterer/1.2/src/MarkerClusterer_min.js"></script>
     <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
-    <title>给多个点添加信息窗口</title>
+    <title>全国主要城市车辆数量</title>
 </head>
 
 <body>
     <div id="allmap"></div>
-    <!--<p>点击标注点，可查看由纯文本构成的简单型信息窗口</p>-->
     <div class="map_title">
         全国主要城市车辆数量
     </div>
@@ -155,7 +154,6 @@
         [91.125049, 29.660634, "布达拉宫", "32020", "冯先生"]
     ];
     var myIcon = new BMap.Icon("../img/map/30redcar.png", new BMap.Size(30, 57));
-
     var opts = {
         width: 80, // 信息窗口宽度
         height: 100, // 信息窗口高度
@@ -191,7 +189,6 @@
             // $(".BMap_pop").css({
             //     "top": $(".BMap_pop").css("top") - 10
             // })
-
         });
     }
 
@@ -200,8 +197,6 @@
         var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat);
         var infoWindow = new BMap.InfoWindow(content, opts); // 创建信息窗口对象 
         map.openInfoWindow(infoWindow, point); //开启信息窗口
-
-        // map.Label(infoWindow, point); //开启信息窗口
     }
 
     // 个性化地图

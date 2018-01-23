@@ -5,6 +5,25 @@
             /*background: #BEBFD6;*/
         }
         
+        .content_center {
+            background: url("../img/index/table_bg.png") no-repeat;
+            background-size: 70% 70%;
+            background-position: center;
+            /*margin-top: 100px;*/
+        }
+        
+        .table_footer {
+            position: absolute;
+            bottom: 10px;
+            right: 30px;
+        }
+        
+        .table_header {
+            position: absolute;
+            bottom: 550px;
+            right: 320px;
+        }
+        
         .clear_float::after {
             content: '';
             clear: both;
