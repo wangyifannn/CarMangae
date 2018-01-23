@@ -12,6 +12,10 @@
             /*margin-top: 100px;*/
         }
         
+        .form-horizontal {
+            position: relative;
+        }
+        
         .table_footer {
             position: absolute;
             bottom: 10px;
@@ -20,8 +24,8 @@
         
         .table_header {
             position: absolute;
-            bottom: 550px;
-            right: 320px;
+            top: -20px;
+            right: 30px;
         }
         
         .clear_float::after {
