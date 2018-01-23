@@ -2,14 +2,13 @@
         
         body {
             background: #F5F5F5;
-            /*background: #BEBFD6;*/
+            min-width: 850px;
         }
         
         .content_center {
             background: url("../img/index/table_bg.png") no-repeat;
             background-size: 70% 70%;
             background-position: center;
-            /*margin-top: 100px;*/
         }
         
         .form-horizontal {
@@ -40,10 +39,10 @@
         
         .form-horizontal {
             /*border: 1px solid red;*/
-            border: 2px solid #A1A2A4;
-            box-shadow: 1px 2px 35px #A1A2A4;
-            background: #FAFBFF;
-            margin-top: 50px;
+            /*border: 2px solid #A1A2A4;*/
+            /*box-shadow: 1px 2px 35px #A1A2A4;*/
+            /*background: #FAFBFF;*/
+            margin-top: 40px;
             /*padding-top: 40px;*/
         }
         
