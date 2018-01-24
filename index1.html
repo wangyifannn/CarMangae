@@ -8,9 +8,10 @@
     <!--<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
     <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap-3.3.7.min.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/jquery.mCustomScrollbar.min.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
-    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link rel="stylesheet" type="text/css" href="./css/index2.css">
+    <!--<link rel="stylesheet" type="text/css" href="./css/index.css">-->
     <link rel="stylesheet" type="text/css" href="./css/mytable.css">
+
     <script src="./assets/js/jquery-1.11.0.min.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
     <script src="assets/js/custom.js"></script>
@@ -18,28 +19,35 @@
     <script src="./js/cartable.js"></script>
     <script src="./js/drivertable.js"></script>
     <script src="./assets/js/laydate.js"></script>
+    <style>
 
+    </style>
 </head>
 
 <body>
     <div class="page-wrapper toggled">
         <nav id="sidebar" class="sidebar-wrapper">
             <div class="sidebar-content">
-                <a href="#" id="toggle-sidebar"><i class="glyphicon glyphicon-align-justify"></i></a>
+                <a href="#" id="toggle-sidebar">
+                    <img class="side_btn" src="./img/index2/side_btn.png" alt="">
+                    <!--<i class="glyphicon glyphicon-align-justify"></i>-->
+                </a>
                 <div class="sidebar-brand">
                     <a href="#">
-                        <img class="sidebar_nav_img" src="./img/login/header_logo.png" alt="">
+                        车辆管理系统
+                        <!--<img class="sidebar_nav_img" src="./img/login/header_logo.png" alt="">-->
                     </a>
                 </div>
                 <div class="sidebar-header">
                     <div class="user-pic">
-                        <img class="img-responsive img-rounded" src="assets/img/user.jpg" alt="">
+                        <!--<img class="img-responsive img-rounded" src="assets/img/user.jpg" alt="">-->
                     </div>
                     <div class="user-info">
-                        <span class="user-name">王 <strong>先生</strong></span>
-                        <span class="user-role">系统管理员</span>
+                        <span class="user-name">陈先生</span>
+                        <span class="user-name">维修管理员</span>
                         <div class="user-status">
-                            <a href="#"><span class="label label-success">Online</span></a>
+                            在线
+                            <!--<a href="#"><span class="label label-success">Online</span></a>-->
                         </div>
                     </div>
                 </div>
@@ -47,12 +55,14 @@
                     <ul id="myTab" class="ul_box">
                         <!--主页-->
                         <li class="active li1">
-                            <a href="#carmap" data-toggle="tab"><i class="glyphicon glyphicon-home"></i>车辆地图
+                            <a href="#carmap" data-toggle="tab"> <img src="./img/index2/home.png" alt=""> 车辆地图
                             </a>
                         </li>
                         <!--车辆管理-->
                         <li class="sidebar-dropdown">
-                            <a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>车辆管理</span><span class="badge">4</span>
+                            <a href="#"><img src="./img/index2/people.png" alt=""> <span>车辆管理</span>
+                                <img class="la" src="./img/index2/la.png" alt="">
+
                             </a>
                             <div class="sidebar-submenu">
                                 <ul>
@@ -66,7 +76,10 @@
                         </li>
                         <!--驾驶员管理-->
                         <li class="sidebar-dropdown">
-                            <a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>驾驶员管理</span><span class="badge">2</span></a>
+                            <a href="#"><img src="./img/index2/people.png" alt=""> <span>驾驶员管理</span>
+                                <img class="la" src="./img/index2/la.png" alt="">
+
+                            </a>
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li><a href="#driverList" data-toggle="tab"><span>驾驶员列表</span></a></li>
@@ -76,7 +89,9 @@
                         </li>
                         <!--维修管理-->
                         <li class="sidebar-dropdown">
-                            <a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>维修管理</span><span class="badge">2</span></a>
+                            <a href="#"><img src="./img/index2/people.png" alt=""> <span>维修管理</span>
+                                <img class="la" src="./img/index2/la.png" alt="">
+                            </a>
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li><a href="#maintainList" data-toggle="tab"><span>维修列表</span></a></li>
@@ -86,7 +101,10 @@
                         </li>
                         <!--数据管理-->
                         <li class="sidebar-dropdown">
-                            <a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>数据管理</span><span class="badge">4</span></a>
+                            <a href="#"><img src="./img/index2/people.png" alt=""><span>数据管理</span>
+                                <img class="la" src="./img/index2/la.png" alt="">
+
+                            </a>
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li><a href="#currentData" data-toggle="tab"><span>实时数据</span></a></li>
@@ -98,7 +116,9 @@
                         </li>
                         <!--日志管理-->
                         <li class="sidebar-dropdown">
-                            <a href="#"><i class="glyphicon glyphicon-oil"></i><span>日志管理</span><span class="badge">4</span></a>
+                            <a href="#"><img src="./img/index2/people.png" alt=""> <span>日志管理</span>
+                                <img class="la" src="./img/index2/la.png" alt="">
+                            </a>
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li><a href="#maintainLog" data-toggle="tab"><span>维修日志</span></a></li>
@@ -110,7 +130,10 @@
                         </li>
                         <!--权限管理-->
                         <li class="sidebar-dropdown">
-                            <a href="#"><i class="glyphicon glyphicon-cog"></i><span>权限管理</span><span class="badge">3</span></a>
+                            <a href="#"><img src="./img/index2/people.png" alt=""> <span>权限管理</span>
+                                <img class="la" src="./img/index2/la.png" alt="">
+
+                            </a>
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li><a href="#rights" data-toggle="tab"><span>权限授予</span></a></li>
@@ -125,9 +148,14 @@
             </div>
             <!-- sidebar-content  -->
             <div class="sidebar-footer">
-                <a href="#"><i class="glyphicon glyphicon-comment"></i><span class="label label-warning notification">3</span></a>
-                <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
-                <a href="#"><i class="glyphicon glyphicon-off"></i></a>
+                <!--<span>-->
+                <img src="./img/index2/dev.png" alt="">
+                <img src="./img/index2/del.png" alt="">
+                <img src="./img/index2/config.png" alt="">
+                <!--</span>-->
+                <!--<a href="#"><i class="glyphicon glyphicon-comment"></i><span class="label label-warning notification">3</span></a>-->
+                <!--<a href="#"><i class="glyphicon glyphicon-cog"></i></a>-->
+                <!--<a href="#"><i class="glyphicon glyphicon-off"></i></a>-->
             </div>
         </nav>
         <!-- sidebar-wrapper  -->
@@ -136,7 +164,7 @@
                 <!-- 这里放置页面内容-->
                 <div class="content_center" class="tab-content">
                     <!--主界面路径导航-->
-                    <div class="bread clear_float">
+                    <!--<div class="bread clear_float">
                         <div class="bread_left pull-left">
                         </div>
                         <div class="bread_right pull-right">
@@ -144,10 +172,10 @@
                                  <i class="glyphicon glyphicon-user"></i>                                
                             </span>
                         </div>
-                    </div>
+                    </div>-->
                     <!--主界面-->
-                    <div class="tab-pane in active" id="carmap">
-                        <iframe class="iframebg" src="./map/carmap.html" width="100%" height="800px" scrolling="no" frameborder="no" border="0"></iframe>
+                    <div class="tab-pane" id="carmap">
+                        <!--<iframe class="iframebg" src="./map/carmap.html" width="100%" height="800px" scrolling="no" frameborder="no" border="0"></iframe>-->
                     </div>
                     <!--车辆相关-->
                     <!--车辆轨迹-->
@@ -184,13 +212,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane tableTypein" id="carTypeIn">
+                    <div class="tab-pane in active tableTypein" id="carTypeIn">
                         <div class="rightbox">
                             <!--车辆录入-->
-                            <img class="table_footer" src="./img/index/table_footer.png" alt="">
-                            <form class="form-horizontal">
-                                <!--<img class="table_header" src="./img/index/table_header.png" alt="">-->
-                                <!--<h3>汽车录入表</h3>-->
+                            <!---->
+                            <img src="./img/index2/tab.png" alt="">
+
+                            <!--<form class="form-horizontal">
+                             
                                 <div class="form-group">
                                     <label for="inputEmail3" class="col-sm-4 control-label">车辆牌号</label>
                                     <div class="col-sm-7">
@@ -239,27 +268,19 @@
                                         <input type="email" class="form-control" id="inputEmail3" placeholder="其他信息">
                                     </div>
                                 </div>
+
                                 <div class="form-group">
                                     <div class="col-sm-offset-4 col-sm-7">
-                                        <div class="checkbox">
-                                            <label>
-                                        <input type="checkbox">同意相关条例
-                                        </label>
-                                        </div>
+                                        <button type="submit" class="mybtn">提交</button>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="col-sm-offset-4 col-sm-7">
-                                        <button type="submit" class="btn btn-default btn-primary">提交</button>
-                                    </div>
-                                </div>
-                            </form>
+                            </form>-->
                         </div>
                     </div>
                     <!--申请用车表-->
                     <div class="tab-pane tableTypein" id="approveCar">
                         <div class="rightbox">
-                            <img class="table_footer" src="./img/index/table_footer.png" alt="">
+
                             <form class="form-horizontal">
                                 <!--<img class="table_header" src="./img/index/table_header.png" alt="">-->
                                 <!--<h3>申请用车表</h3>-->
@@ -322,7 +343,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-offset-4 col-sm-10">
-                                        <button type="submit" class="btn btn-default btn-primary">提交</button>
+                                        <button type="submit" class="mybtn">提交</button>
                                     </div>
                                 </div>
                             </form>
@@ -362,7 +383,7 @@
                     <!--驾驶员录入-->
                     <div class="tab-pane tableTypein" id="driverTypeIn">
                         <div class="rightbox">
-                            <img class="table_footer" src="./img/index/table_footer.png" alt="">
+
                             <form class="form-horizontal">
                                 <!--<img class="table_header" src="./img/index/table_header.png" alt="">-->
                                 <!--<h3>驾驶员录入表</h3>-->
@@ -417,16 +438,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-offset-4 col-sm-7">
-                                        <div class="checkbox">
-                                            <label>
-                                        <input type="checkbox">同意相关条例
-                                        </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-offset-4 col-sm-7">
-                                        <button type="submit" class="btn btn-default btn-primary">提交</button>
+                                        <button type="submit" class="mybtn">提交</button>
                                     </div>
                                 </div>
                             </form>
@@ -470,7 +482,7 @@
                     <!--维修申请-->
                     <div class="tab-pane tableTypein" id="maintainTypeIn">
                         <div class="rightbox">
-                            <img class="table_footer" src="./img/index/table_footer.png" alt="">
+
                             <form class="form-horizontal">
                                 <!--<img class="table_header" src="./img/index/table_header.png" alt="">-->
                                 <!--<h3>维修申请表</h3>-->
@@ -513,16 +525,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-offset-3 col-sm-8">
-                                        <div class="checkbox">
-                                            <label>
-                                        <input type="checkbox">同意相关条例
-                                        </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-offset-3 col-sm-8">
-                                        <button type="submit" class="btn btn-default btn-primary">提交</button>
+                                        <button type="submit" class="mybtn">提交</button>
                                     </div>
                                 </div>
                             </form>
@@ -712,7 +715,7 @@
                     <div class="tab-pane" id="rights">
                         <!--权限授予-->
                         <div class="rightbox">
-                            <img class="table_footer" src="./img/index/table_footer.png" alt="">
+
                             <!--<img class="table_header" src="./img/index/table_header.png" alt="">-->
                             <form class="form-horizontal">
                                 <!--<h3>权限信息</h3>-->
@@ -737,7 +740,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" class="btn btn-default btn-primary">提交</button>
+                                        <button type="submit" class="mybtn">提交</button>
                                     </div>
                                 </div>
                             </form>
@@ -746,7 +749,7 @@
                     <!--角色管理-->
                     <div class="tab-pane" id="role">
                         <div class="rightbox">
-                            <img class="table_footer" src="./img/index/table_footer.png" alt="">
+
                             <form class="form-horizontal">
                                 <!--<img class="table_header" src="./img/index/table_header.png" alt="">-->
                                 <!--<h3>角色管理</h3>-->
@@ -781,7 +784,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" class="btn btn-default btn-primary">提交</button>
+                                        <button type="submit" class="mybtn">提交</button>
                                     </div>
                                 </div>
                             </form>
@@ -789,7 +792,7 @@
                     </div>
                     <div class="tab-pane" id="user">
                         <div class="rightbox">
-                            <img class="table_footer" src="./img/index/table_footer.png" alt="">
+
                             <form class="form-horizontal">
                                 <!--<img class="table_header" src="./img/index/table_header.png" alt="">-->
                                 <!--<h3>用户管理</h3>-->
@@ -820,7 +823,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" class="btn btn-default btn-primary">提交</button>
+                                        <button type="submit" class="mybtn">提交</button>
                                     </div>
                                 </div>
                             </form>
@@ -834,7 +837,7 @@
         <!-- page-content" -->
         <!--start 图片懒加载-->
         <div class="loading">
-            <p>loading……</p>
+            <!--<p>loading……</p>-->
         </div>
         <!--end 图片懒加载-->
     </div>
@@ -846,89 +849,5 @@
 <script type="text/javascript" src="./js/tableExport.min.js"></script>
 
 <script type="text/javascript" src="https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.js"></script>
-<script>
-    // s 页面懒加载
-    document.onreadystatechange = loadingChange; //当页面加载状态改变的时候执行这个方法.  
-    function loadingChange() {
-        if (document.readyState == "complete") { //当页面加载状态为完全结束时进入   
-            $(".loading").hide(); //当页面加载完成后将loading页隐藏  
-        }
-    }
-    // e 页面懒加载
-    // 解决侧边菜单点击 active失效问题
-
-    // 面包屑导航
-    var breadHtml = "";
-    var breadli1 = "车辆管理系统";
-    var breadli2 = "车辆地图";
-    var breadli3 = "";
-
-    function changBread(bread1, bread2, bread3) {
-        breadHtml = "<ol class='breadcrumb'> <li><span>车辆管理系统&nbsp;&nbsp;&nbsp;当前位置:&nbsp;&nbsp;&nbsp;</span><a href='./index.html'>" + bread1 + "</a> </li><li> <a href = '#''>" +
-            bread2 + " </a></li><li class = 'active'> " + bread3 + "</li> </ol>";
-        $(".bread_left").html(breadHtml);
-    }
-    changBread(breadli1, breadli2, breadli3);
-
-    // 点击选中切换页面并改变面包屑导航路径
-    $(".sidebar-dropdown ul li").click(function() {
-            // console.log(this.parentNode.parentNode.parentNode.children[0].children[1].innerText);
-            // console.log(this.innerText);
-            changBread(breadli1, this.parentNode.parentNode.parentNode.children[0].children[1].innerText, this.innerText);
-            // console.log($(this));
-            // console.log($(this).children());
-            // console.log($($(this).children[1]).textContent);
-            var sib = $(this).parent().parent().parent().siblings();
-            // console.log(sib);
-            for (var i = 0; i < sib.length; i++) {
-                // console.log(sib[i]);
-                $(sib[i]).removeClass("active");
-                // console.log(sib[i]);
-                if (sib[i].children[1]) {
-                    var li2 = sib[i].children[1].children[0];
-                    for (var j = 0; j < li2.children.length; j++) {
-                        $(li2.children[j]).removeClass("active");
-                    }
-                }
-            }
-        })
-        // 
-    $(".li1").click(function() {
-        // console.log(this);
-        var sibs = $(this).siblings();
-        for (var i = 0; i < sibs.length; i++) {
-            // console.log($(sibs[i].children[1].children[0]).children());
-            var li2 = $(sibs[i].children[1].children[0]).children();
-            for (var j = 0; j < li2.length; j++) {
-                // console.log(li2[j]);
-                $(li2[j]).removeClass("active");
-            }
-
-        }
-    })
-
-    //点击注销按钮，进入登录页面
-    $(".glyphicon-off").click(function() {
-        // alert("a");
-        window.localStorage.clear;
-        window.location.href = "./html/login.html";
-    });
-    // 点击判断浏览器类型
-    function isFF() {
-        return navigator.userAgent.indexOf("Firefox") != -1;
-    }
-
-    function isChrome() {
-        return navigator.userAgent.indexOf("Chrome") > -1;
-    }
-    isFF();
-    console.log(isFF());
-    console.log(isChrome());
-    isChrome();
-    if (isFF() || isChrome()) {
-        // <!--<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
-        $("head").append("<meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>");
-    }
-</script>
 
 </html>
